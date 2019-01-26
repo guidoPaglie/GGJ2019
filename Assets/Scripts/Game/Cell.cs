@@ -1,7 +1,7 @@
 public class Cell
 {
-    public bool _walkable;
-    public Item _item;
+    private bool _walkable;
+    private Item _item;
 
     public Cell() {
         _walkable = true;
@@ -16,7 +16,7 @@ public class Cell
     }
 
     public bool IsWalkable() {
-        return _walkable && _item;
+        return _walkable && (_item == null || _item.isWalkable);
     }
 
     public void SetItem(Item item) {

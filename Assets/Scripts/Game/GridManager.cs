@@ -33,7 +33,7 @@ public class GridManager : MonoBehaviour {
 
 	public static bool CanMoveTo(Vector2 nextMovement) {
 		try {
-			return grid[(int) nextMovement.x, (int) nextMovement.y]._walkable;
+			return grid[(int) nextMovement.x, (int) nextMovement.y].IsWalkable();
 		}
 		catch (Exception e) {
 			return false;

@@ -48,7 +48,7 @@ public class GridManagerTool : MonoBehaviour {
 	private void ResetAllTiles() {
 		for (var x = 0; x < GridManager.width; x++) {
 			for (var y = 0; y < GridManager.height; y++) {
-				gridReference[x, y].DesClick();
+				gridReference[x, y].Reset();
 			}
 		}
 		cellPositions = new List<CellPosition>();
@@ -65,6 +65,7 @@ public class GridManagerTool : MonoBehaviour {
 	}
 
 	public static void RemoveCell(float positionX, float positionY) {
+		if (!cellPositions.Any()) return;
 		var c = cellPositions.First(cell => cell.dpX == positionX && cell.dpY == positionY);
 		cellPositions.Remove(c);
 	}

@@ -11,6 +11,9 @@ public class LevelController : MonoBehaviour {
         var textAsset = Resources.Load<TextAsset>(levelName);
         var cellpositionsList = JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);
         GridManager.UpdateGridFrom(cellpositionsList);
-    }
-    
+
+        foreach (var item in levelItems) {
+            GridManager.InsertItemIn(item.itemPosition.x, item.itemPosition.y, item);
+        }
+    }    
 }

@@ -24,4 +24,9 @@ public class ClickableCells : MonoBehaviour {
 		sprite.color = Color.white;
 		alreadyClicked = false;
 	}
+	
+	public void Reset() {
+		sprite.color = Color.white;
+		alreadyClicked = false;
+	}
 }
