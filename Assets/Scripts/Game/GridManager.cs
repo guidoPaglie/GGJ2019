@@ -16,7 +16,7 @@ public class GridManager : MonoBehaviour
             {
                 grid[x,y] = new Cell();
 
-                Instantiate(testPrefab, new Vector3(x * 2, y * 2,- 1), Quaternion.identity);
+                Instantiate(testPrefab, new Vector3(x, y,- 1), Quaternion.identity);
             }
         }
     }
