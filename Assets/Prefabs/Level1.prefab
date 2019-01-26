@@ -94,7 +94,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemPosition: {fileID: 1125920002}
-  isPickable: 0
+  isPickable: 1
   isWalkable: 0
   message: Soy un bitcoin! SI UN BITCOIN!
 --- !u!114 &1125920002
@@ -267,5 +267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelName: level1
+  initialCharacterLeftPosition: {x: 8, y: 2}
+  initialCharacterRightPosition: {x: 22, y: 2}
   levelItems:
   - {fileID: 1125920003}

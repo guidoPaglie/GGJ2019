@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Cell
 {
     private bool _walkable;
@@ -24,7 +26,11 @@ public class Cell
         return _item;
     }
 
-    public void SetItem(Item item) {
+    public void SetItem(Item item)
+    {
+        if (item == null && _item != null)
+            _item.DestroyItem();
+        
         _item = item;
     }
 }

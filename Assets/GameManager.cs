@@ -31,25 +31,38 @@ public class GameManager : MonoBehaviour
     public void PerformAction(CharacterController character)
     {
         Cell cell = GridManager.GetCell(character.FacingPosition());
+        Item item = cell.GetItem();
+
+        if (item == null) return;
+        
+        PerformDialog(item, character);
+        PerformPick(cell, character);
+    }
+
+    private void PerformDialog(Item item, CharacterController character)
+    {
         DialogBox currentDialogBox;
         
         if (character == characterLeft) currentDialogBox = dialogBoxLeft;
         else currentDialogBox = dialogBoxRight;
 
-        if (cell.GetItem() != null && !string.IsNullOrEmpty(cell.GetItem().message))
+        if (!string.IsNullOrEmpty(item.message))
         {
-            currentDialogBox.ShowMessage(cell.GetItem().message);
+            currentDialogBox.ShowMessage(item.message);
         }
+    }
+
+    private void PerformPick(Cell cell, CharacterController character)
+    {
+        if (cell.GetItem().isPickable)
+        {
+            character.pickedItem = cell.GetItem();
+            cell.SetItem(null);
+        } 
     }
 
     public bool CanMoveTo(Vector2 position)
     {
         return GridManager.CanMoveTo(position);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

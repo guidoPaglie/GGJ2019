@@ -10,7 +10,9 @@ public class CharacterController : UnityXboxController {
 	public Sprite CharacterRightSprite;
 	private Direction _currentDirection = Direction.Up;
 
-	private GameManager _gameManager; 
+	private GameManager _gameManager;
+
+	public Item pickedItem;
 
 	void Awake() {
 		UpdateSprite(_currentDirection);
