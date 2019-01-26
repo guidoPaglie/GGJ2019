@@ -52,7 +52,7 @@ public class CharacterController : UnityXboxController {
 		switch (direction) {
 			case Direction.Up:
 				Move(Direction.Up);
-				
+
 				break;
 			case Direction.Down:
 				Move(Direction.Down);
@@ -66,6 +66,7 @@ public class CharacterController : UnityXboxController {
 			default:
 				throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
 		}
+
 		UpdateSprite(direction);
 	}
 
@@ -91,32 +92,29 @@ public class CharacterController : UnityXboxController {
 	void Move(Direction direction) {
 		_currentDirection = direction;
 		int x;
-		int y;		
+		int y;
 		var transform1 = transform;
 		var position = transform1.position;
-		
+
+		if (GridManager.CanMoveTo(NextMovement(direction))) {
+			position = NextMovement(direction);
+			transform1.position = position;
+		}		
+	}
+
+	Vector2 NextMovement(Direction direction) {
 		switch (direction) {
 			case Direction.Up:
-				x = 0;
-				y = 1;
-				break;
+				return new Vector2(transform.position.x, transform.position.y + 1);
 			case Direction.Down:
-				x = 0;
-				y = -1;
-				break;
+				return new Vector2(transform.position.x, transform.position.y - 1);
 			case Direction.Left:
-				x = -1;
-				y = 0;
-				break;
+				return new Vector2(transform.position.x - 1, transform.position.y);
 			case Direction.Right:
-				x = 1;
-				y = 0;
-				break;
+				return new Vector2(transform.position.x + 1, transform.position.y);
 			default:
 				throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
 		}
-		position = new Vector2(position.x + cellSize * x, position.y + cellSize * y);
-		transform1.position = position;
 	}
 
 	protected override void OnLeftYAxisMove(float yAxis) {

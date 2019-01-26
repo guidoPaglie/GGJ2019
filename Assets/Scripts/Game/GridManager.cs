@@ -1,75 +1,38 @@
-﻿using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class CellPosition
-{
-    public readonly float dpX;
-    public readonly float dpY;
+public class GridManager : MonoBehaviour {
+	public const int width = 30;
+	public const int height = 15;
 
-    public CellPosition(float x, float y)
-    {
-        dpX = x;
-        dpY = y;
-    }
-}
+	private static Cell[,] grid = new Cell[width, height];
+	private static List<CellPosition> cellPositions;
 
-public class GridManager : MonoBehaviour
-{
-    private const int width = 30;
-    private const int height = 15;
+	private static bool isDebug;
 
-    public GameObject testPrefab;
-    public string levelName;
+	private void Awake() {
+		cellPositions = new List<CellPosition>();
 
-    private Cell[,] grid = new Cell[width, height];
-    private static List<CellPosition> cellPositions;
+		for (var x = 0; x < width; x++) {
+			for (var y = 0; y < height; y++) {
+				grid[x, y] = new Cell();
+			}
+		}
+	}
 
-    private bool isDebug = true;
+	public static void UpdateGridFrom(List<CellPosition> cellPositions) {
+		foreach (var cellPosition in cellPositions) {
+			grid[(int) cellPosition.dpX, (int) cellPosition.dpY].DisableWalk();
+		}
+	}
 
-    private void Start()
-    {
-        if (isDebug)
-        {
-            Resources.Load(levelName + ".json");
-            //JsonConvert.DeserializeObject()
-            
-            //cellPositions = 
-        }
-
-        for (int x = 0; x < width; x++)
-        {
-            for (int y = 0; y < height; y++)
-            {
-                grid[x, y] = new Cell();
-
-                Instantiate(testPrefab, new Vector3(x, y), Quaternion.identity);
-            }
-        }
-    }
-
-    public static void AddCell(float positionX, float positionY)
-    {
-        cellPositions.Add(new CellPosition(positionX, positionY));
-    }
-
-    public static void RemoveCell(float positionX, float positionY)
-    {
-        var c = cellPositions.First(cell => cell.dpX == positionX && cell.dpY == positionY);
-        cellPositions.Remove(c);
-    }
-
-    public void OnGUI()
-    {
-        if (GUILayout.Button("save " + levelName))
-        {
-            var jsonCellPositions = JsonConvert.SerializeObject(cellPositions);
-            Debug.Log(jsonCellPositions);
-
-            File.WriteAllText("Assets/Resources/" + levelName + ".json", jsonCellPositions);
-        }
-    }
+	public static bool CanMoveTo(Vector2 nextMovement) {
+		try {
+			return grid[(int) nextMovement.x, (int) nextMovement.y]._walkable;
+		}
+		catch (Exception e) {
+			return false;
+		}
+	}
 }
