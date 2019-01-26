@@ -5,6 +5,7 @@ using UnityEngine;
 public class GridManager : MonoBehaviour
 {
     private Cell[,] grid = new Cell[60,30];
+    public GameObject testPrefab;
     
     // Start is called before the first frame update
     void Start()
@@ -13,7 +14,7 @@ public class GridManager : MonoBehaviour
         {
             for (int y = 0; y < 30; y++)
             {
-                
+                grid[x,y] = new Cell();
             }
         }
     }
