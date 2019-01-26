@@ -6,22 +6,20 @@ public class LevelController : MonoBehaviour {
     public string levelName;
     public Vector2 initialCharacterLeftPosition;
     public Vector2 initialCharacterRightPosition;
-
-    public List<Item> levelItems = new List<Item>();
     
-    private void Start() {
-        SetupGrid();
+    public void Init() {
+        OnStart();
+    }
+    
+    protected virtual void OnStart() {
     }
 
-    private void SetupGrid()
-    {
-        var textAsset = Resources.Load<TextAsset>(levelName);
-        var cellpositionsList = JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);
-        GridManager.ResetGrid();
-        GridManager.UpdateGridFrom(cellpositionsList);
+    public virtual void OnTriggerEvent(string itemId) {
+        
+    }
 
-        foreach (var item in levelItems) {
-            GridManager.InsertItemIn(item.itemPosition.x, item.itemPosition.y, item);
-        }
+    public List<CellPosition> GetCellPositions() {
+        var textAsset = Resources.Load<TextAsset>(levelName);
+        return JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);
     }
 }

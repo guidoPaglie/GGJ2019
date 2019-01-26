@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Newtonsoft.Json;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -25,14 +26,26 @@ public class GameManager : MonoBehaviour
         
         characterLeft.SetGameManager(this);
         characterRight.SetGameManager(this);
-        LoadLevel(level1);        
+        LoadLevel(level1);
     }
+
 
     private void LoadLevel(LevelController level)
     {
         characterLeft.transform.position = level.initialCharacterLeftPosition;
         characterRight.transform.position = level.initialCharacterRightPosition;
+        
+        if(_currentLevel != null)
+            _currentLevel.gameObject.SetActive(false);
+        
         _currentLevel = level;
+        _currentLevel.gameObject.SetActive(true);
+        
+        var cellpositionsList = _currentLevel.GetCellPositions();
+        GridManager.ResetGrid();
+        GridManager.UpdateGridFrom(cellpositionsList);
+        
+        _currentLevel.Init();
     }
 
     public void PerformAction(CharacterController character)
@@ -41,6 +54,11 @@ public class GameManager : MonoBehaviour
         Item item = cell.GetItem();
 
         if (item == null) return;
+
+        if (item.isDoor) {
+            LoadLevel(level2);
+            return;
+        }
         
         PerformDialog(item, character);
         PerformPick(cell, character);
@@ -63,8 +81,10 @@ public class GameManager : MonoBehaviour
     {
         if (cell.GetItem().isPickable)
         {
-            character.pickedItem = cell.GetItem();
+            var id = cell.GetItem().id;
+            character.pickedItemId = id;
             cell.SetItem(null);
+            _currentLevel.OnTriggerEvent(id);
         } 
     }
 

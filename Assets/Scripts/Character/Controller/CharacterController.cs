@@ -12,7 +12,7 @@ public class CharacterController : UnityXboxController {
 
 	private GameManager _gameManager;
 
-	public Item pickedItem;
+	public string pickedItemId;
 
 	void Awake() {
 		UpdateSprite(_currentDirection);
