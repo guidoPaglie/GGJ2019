@@ -18,6 +18,6 @@ public class IntroManager : MonoBehaviour
     private IEnumerator ChangeScene()
     {
         yield return new WaitForSeconds(2.0f);
-        SceneManager.LoadScene("Level1", LoadSceneMode.Single);
+        SceneManager.LoadScene("Messages", LoadSceneMode.Single);
     }
 }
