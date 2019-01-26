@@ -566,3 +566,4 @@ healthchecksdb
 
 # End of https://www.gitignore.io/api/rider,macos,unity,windows,jetbrains,visualstudio,visualstudiocode
 JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
+Assets/Plugins/Editor/JetBrains/JetBrains.Rider.Unity.Editor.Plugin.Repacked.dll
