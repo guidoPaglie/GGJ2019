@@ -1,13 +1,16 @@
-﻿using UnityEngine;
+﻿using System.Timers;
+using UnityEngine;
 using XboxCtrlrInput;
 
 public class UnityXboxController : MonoBehaviour {
 	public XboxController controller;
-
+	public float stickDelay = 0.2f;
 	private bool _leftStickLeft;
 	private bool _leftStickRight;
 	private bool _leftStickUp;
 	private bool _leftStickDown;
+	private bool _tick;
+	private float _timer;
 
 	void FixedUpdate() {
 		if (XCI.GetButtonDown(XboxButton.A, controller)) {
@@ -48,10 +51,27 @@ public class UnityXboxController : MonoBehaviour {
 		OnRightXAxisMove(XCI.GetAxis(XboxAxis.RightStickX, controller));
 		OnRightYAxisMove(XCI.GetAxis(XboxAxis.RightStickY, controller));
 
+		if (Input.GetKeyDown(KeyCode.LeftArrow)) {
+			OnLeftStickLeft();
+		}
+		
+		if (Input.GetKeyDown(KeyCode.RightArrow)) {
+			OnLeftStickRight();
+		}
+		
+		if (Input.GetKeyDown(KeyCode.UpArrow)) {
+			OnLeftStickUp();
+		}
+		
+		if (Input.GetKeyDown(KeyCode.DownArrow)) {
+			OnLeftStickDown();
+		}
+		
 		if (!_leftStickRight) {
 			if (XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1) {
 				OnLeftStickRight();
 				_leftStickRight = true;
+				_tick = true;
 			}
 		}
 		else {
@@ -64,6 +84,7 @@ public class UnityXboxController : MonoBehaviour {
 			if (XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1) {
 				OnLeftStickLeft();
 				_leftStickLeft = true;
+				_tick = true;
 			}
 		}
 		else {
@@ -76,6 +97,7 @@ public class UnityXboxController : MonoBehaviour {
 			if (XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1) {
 				OnLeftStickUp();
 				_leftStickUp = true;
+				_tick = true;
 			}
 		}
 		else {
@@ -84,15 +106,31 @@ public class UnityXboxController : MonoBehaviour {
 			}
 		}
 
+		
 		if (!_leftStickDown) {
 			if (XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1) {
 				OnLeftStickDown();
 				_leftStickDown = true;
+				_tick = true;
 			}
 		}
 		else {
 			if (XCI.GetAxis(XboxAxis.LeftStickY, controller) > -0.5f) {
 				_leftStickDown = false;
+			}
+		}
+
+		if (_tick) {
+			if (_timer <= stickDelay) {
+				_timer += Time.deltaTime;
+			}
+			else {
+				_timer = 0;
+				_tick = false;
+				_leftStickDown = false;
+				_leftStickUp = false;
+				_leftStickLeft = false;
+				_leftStickRight = false;
 			}
 		}
 	}
