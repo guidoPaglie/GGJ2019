@@ -7,13 +7,14 @@ public class GridManager : MonoBehaviour {
 	public const int height = 15;
 
 	private static Cell[,] grid = new Cell[width, height];
-	private static List<CellPosition> cellPositions;
 
 	private static bool isDebug;
 
 	private void Awake() {
-		cellPositions = new List<CellPosition>();
+		ResetGrid();
+	}
 
+	public static void ResetGrid() {
 		for (var x = 0; x < width; x++) {
 			for (var y = 0; y < height; y++) {
 				grid[x, y] = new Cell();

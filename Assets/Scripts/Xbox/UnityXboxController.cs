@@ -40,27 +40,21 @@ public class UnityXboxController : MonoBehaviour {
 			OnYHold();
 		}
 
-		OnLeftXAxisMove(XCI.GetAxis(XboxAxis.LeftStickX, controller));
-		OnLeftYAxisMove(XCI.GetAxis(XboxAxis.LeftStickY, controller));
-
-		OnRightXAxisMove(XCI.GetAxis(XboxAxis.RightStickX, controller));
-		OnRightYAxisMove(XCI.GetAxis(XboxAxis.RightStickY, controller));
-
 		if (!_directionInputBlocked)
 		{
-			if (Input.GetKey(KeyCode.LeftArrow) || XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1) {
+			if (LeftButtonPressed()) {
 				OnLeftStickLeft();
 				_directionInputBlocked = true;
 			}
-			else if (Input.GetKey(KeyCode.RightArrow) || XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1) {
+			else if (RightButtonPressed()) {
 				OnLeftStickRight();
 				_directionInputBlocked = true;
 			}
-			else if (Input.GetKey(KeyCode.UpArrow) || XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1) {
+			else if (UpButtonPressed()) {
 				OnLeftStickUp();
 				_directionInputBlocked = true;
 			}
-			else if (Input.GetKey(KeyCode.DownArrow) || XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1) {
+			else if (DownButtonPressed()) {
 				OnLeftStickDown();
 				_directionInputBlocked = true;
 			}
@@ -76,6 +70,26 @@ public class UnityXboxController : MonoBehaviour {
 		}
 	}
 
+	protected virtual bool LeftButtonPressed() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.A : KeyCode.LeftArrow;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1;
+	}
+	
+	protected virtual bool RightButtonPressed() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.D : KeyCode.RightArrow;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1;
+	}
+	
+	protected virtual bool UpButtonPressed() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.W : KeyCode.UpArrow;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1;
+	}
+	
+	protected virtual bool DownButtonPressed() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.S : KeyCode.DownArrow;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1;
+	}
+
 	protected virtual void OnLeftStickDown() {
 		
 	}
@@ -88,18 +102,6 @@ public class UnityXboxController : MonoBehaviour {
 	}
 
 	protected virtual void OnLeftStickLeft() {
-	}
-
-	protected virtual void OnRightXAxisMove(float xAxis) {
-	}
-
-	protected virtual void OnRightYAxisMove(float yAxis) {
-	}
-
-	protected virtual void OnLeftXAxisMove(float xAxis) {
-	}
-
-	protected virtual void OnLeftYAxisMove(float yAxis) {
 	}
 
 	protected virtual void OnAPressed() {

@@ -120,15 +120,6 @@ public class CharacterController : UnityXboxController {
 		}
 	}
 
-	protected override void OnLeftYAxisMove(float yAxis) {
-	}
-
-	protected override void OnRightXAxisMove(float xAxis) {
-	}
-
-	protected override void OnRightYAxisMove(float yAxis) {
-	}
-
 	private enum Direction {
 		Up,
 		Down,
