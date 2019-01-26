@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Intro.unity
     guid: 8d0bb7c1d6ddc4855aa49c32eeeebeb8
   - enabled: 1
+    path: Assets/Scenes/Messages.unity
+    guid: 580bcf8ed3ca3413ab61394fb5c94665
+  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: e603423e87e3445b5bacf98f29154036
   m_configObjects: {}
