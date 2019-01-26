@@ -103,7 +103,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bdebbaae1307f425a84f2a3125e53b31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0bab7d59834043f8b94cf60ce2a3911, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -991,7 +991,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bdebbaae1307f425a84f2a3125e53b31, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0bab7d59834043f8b94cf60ce2a3911, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1506,12 +1506,12 @@ MonoBehaviour:
   cartridgeRight: {fileID: 53942773}
   doorLeft: {fileID: 5601894560075809338}
   doorRight: {fileID: 182178762}
-  pot: {fileID: 2039209607}
-  potCollider: {fileID: 694469990}
+  potRight: {fileID: 2039209607}
+  potRightCollider: {fileID: 694469990}
   potLeft: {fileID: 273258959}
   brokenPotLeft: {fileID: 1024818884}
   ballLeft: {fileID: 5412105114716721730}
-  brokenBallRight: {fileID: 2005326075}
+  ballRight: {fileID: 2005326075}
 --- !u!1 &6738440624941885773
 GameObject:
   m_ObjectHideFlags: 0

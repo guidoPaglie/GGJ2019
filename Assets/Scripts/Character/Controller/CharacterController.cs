@@ -89,8 +89,6 @@ public class CharacterController : UnityXboxController {
 
 	void Move(Direction direction) {
 		_currentDirection = direction;
-		int x;
-		int y;
 		var transform1 = transform;
 		var position = transform1.position;
 

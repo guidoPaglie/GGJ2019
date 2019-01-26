@@ -469,6 +469,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogBoxVariantLeft
       objectReference: {fileID: 0}
+    - target: {fileID: 5692652862252465513, guid: 6cc81d934dae64e48bca074f7bdf9114,
+        type: 3}
+      propertyPath: dialogEnableTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5692652862252465519, guid: 6cc81d934dae64e48bca074f7bdf9114,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -538,11 +543,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692652862252465513, guid: 6cc81d934dae64e48bca074f7bdf9114,
-        type: 3}
-      propertyPath: dialogEnableTime
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc81d934dae64e48bca074f7bdf9114, type: 3}
@@ -649,6 +649,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5692652862252465513, guid: 2b93dc2f21d8a4fda938e4bf96789825,
+        type: 3}
+      propertyPath: dialogEnableTime
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5692652862252465519, guid: 2b93dc2f21d8a4fda938e4bf96789825,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -718,11 +723,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5692652862252465513, guid: 2b93dc2f21d8a4fda938e4bf96789825,
-        type: 3}
-      propertyPath: dialogEnableTime
-      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b93dc2f21d8a4fda938e4bf96789825, type: 3}

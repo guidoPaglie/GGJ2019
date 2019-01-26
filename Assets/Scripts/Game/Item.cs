@@ -16,7 +16,6 @@ public class Item : MonoBehaviour {
 	}
 
 	public void DestroyItem() {
-		Debug.Log("Culo");
 		Destroy(this.gameObject);
 	}
 

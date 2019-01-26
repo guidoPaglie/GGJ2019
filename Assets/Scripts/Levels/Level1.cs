@@ -8,8 +8,8 @@ public class Level1 : LevelController {
 	public Item cartridgeRight;
 	public Item doorLeft;
 	public Item doorRight;
-	public Item pot;
-	public Item potCollider;
+	public Item potRight;
+	public Item potRightCollider;
 	public Item potLeft;
 	public Item brokenPotLeft;
 	public Item ballLeft;
@@ -20,8 +20,8 @@ public class Level1 : LevelController {
 		cartridgeRight.gameObject.SetActive(false);
 		brokenPotLeft.gameObject.SetActive(false);
 		ballLeft.gameObject.SetActive(false);
-		GridManager.InsertItemIn(pot.itemPosition.x, pot.itemPosition.y, pot);
-		GridManager.InsertItemIn(potCollider.itemPosition.x, potCollider.itemPosition.y, potCollider);
+		GridManager.InsertItemIn(potRight.itemPosition.x, potRight.itemPosition.y, potRight);
+		GridManager.InsertItemIn(potRightCollider.itemPosition.x, potRightCollider.itemPosition.y, potRightCollider);
 		GridManager.InsertItemIn(cartridgeTrigger1.itemPosition.x, cartridgeTrigger1.itemPosition.y, cartridgeTrigger1);
 		GridManager.InsertItemIn(cartridgeTrigger2.itemPosition.x, cartridgeTrigger2.itemPosition.y, cartridgeTrigger2);
 		GridManager.InsertItemIn(cartridgeTrigger3.itemPosition.x, cartridgeTrigger3.itemPosition.y, cartridgeTrigger3);
@@ -55,6 +55,10 @@ public class Level1 : LevelController {
 					GridManager.RemoveItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y, potLeft);
 					potLeft.DestroyItem();
 					brokenPotLeft.gameObject.SetActive(true);
+					potRight.gameObject.SetActive(false);
+					doorRight.isDoor = true;
+					GridManager.RemoveItemIn(potRight.itemPosition.x, potRight.itemPosition.y, potRight);
+					GridManager.RemoveItemIn(potRightCollider.itemPosition.x, potRightCollider.itemPosition.y, potRightCollider);
 					GridManager.InsertItemIn(brokenPotLeft.itemPosition.x, brokenPotLeft.itemPosition.y, brokenPotLeft);
 				});
 				break;
