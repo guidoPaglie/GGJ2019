@@ -1,5 +1,4 @@
-﻿using System.Timers;
-using UnityEngine;
+﻿using UnityEngine;
 using XboxCtrlrInput;
 
 public class UnityXboxController : MonoBehaviour {

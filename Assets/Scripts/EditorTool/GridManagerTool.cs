@@ -37,11 +37,21 @@ public class GridManagerTool : MonoBehaviour {
 
 		if (GUILayout.Button("Load " + levelName)) {
 			var textAsset = Resources.Load<TextAsset>(levelName);
-			var cellpositionsList = JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);			
-			GridManager.UpdateGridFrom(cellpositionsList);
+			var cellpositionsList = JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);
+			ResetAllTiles();
 			UpdateTileReferences(cellpositionsList);
-			
+			GridManager.UpdateGridFrom(cellpositionsList);			
+					
 		}
+	}
+
+	private void ResetAllTiles() {
+		for (var x = 0; x < GridManager.width; x++) {
+			for (var y = 0; y < GridManager.height; y++) {
+				gridReference[x, y].DesClick();
+			}
+		}
+		cellPositions = new List<CellPosition>();
 	}
 
 	void UpdateTileReferences(List<CellPosition> cellPositions) {

@@ -21,6 +21,10 @@ public class GridManager : MonoBehaviour {
 		}
 	}
 
+	public static void InsertItemIn(int x, int y, Item item) {
+		grid[x, y].SetItem(item);
+	}
+
 	public static void UpdateGridFrom(List<CellPosition> cellPositions) {
 		foreach (var cellPosition in cellPositions) {
 			grid[(int) cellPosition.dpX, (int) cellPosition.dpY].DisableWalk();
