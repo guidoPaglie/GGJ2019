@@ -1,38 +1,55 @@
-{
-	"intro":{
-		"intro_1":"Mom died last month. Or maybe it was the month before.",
-		"intro_2":"I decided to sell the old family house, a little dwelling in the suburbs.",
-		"intro_3":"I haven't been there in years."
+{ 
+	"intro":
+	{
+		"intro_1": "Mom died last month. Or maybe it was the month before.",
+		"intro_2": "I decided to sell the old family house, a little dwelling in the suburbs.",
+		"intro_3": "I haven't been there in years.",
 	},
-	"level1":{
-		"ball_right":"Mom scold me every afternoon for playing around her flower pots.",
-		"cartridge_right":"Super Mega Star Soccer Premium 3 for NES! I loved that game!",
-		"door_left":"I'm not done playing outside. If I get inside now, mom will insist I make my homework!",
-		"pot_left":"Mom loves this stupid plant. She says it can grow up to be huge.",
-		"tree_right":"Stupid plant, it's on my way! Guess mom was right..."
-	},
-	"level2":{
-		"cookies_left":"value",
-		"cupboard_left":"value",
-		"cupboard_right":"value",
-		"door_left":"value",
-		"door_right":"value",
-		"joystick_right":"value",
-		"note_right":"value",
-		"phone_left":"value",
-		"phone_right":"value",
-		"phonebook_right":"value",
-		"rat_right":"value"
-	},
-	"level3":{
-		"chest_left":"value",
-		"chest_right":"value",
-		"console_right":"value",
-		"drawer_left":"value",
-		"drawer_right":"value",
-		"library_left":"value",
-		"library_right":"value",
-		"tv_left":"Oh, it's almost time for Dragon Ball Z! But better don't get distracted...",
-		"tv_right":"Incredible, but it still works!"
+	"level1":
+	{
+		"ball_right": "Mom scold me every afternoon for playing around her flower pots.",
+		"ball_callback_right": "I should've destroyed more of those infernal bushes.",
+		"cartridge_left": "Amazing game. You can borrow it if you like.",
+		"cartridge_right": "Global Mega Star Soccer Premium 3 for NES! I loved this game!",
+		"door_left": "I'm not done playing outside. If I get inside now, mom will insist I make my homework!",
+		"pot_left": "Mom loves this stupid plant. She says it can grow up to be huge.",
+		"pot_right": "Stupid plant, it would be moderately inconvenient to get through it! I should've destroyed it when I had the chance.",
+		"pot_broken_left": "Die, you vegetable scum!",
+
+	},	
+	"level2":
+	{
+		"cookies_left": "Best to put this away. I don't wanna get grounded for life!",
+		"cupboard_left": "Our family's cupboard. Dad's hidden whisky bottle seems to be working after hours lately.",
+		"cupboard_right": "Can't remember why we end up putting these old phone records up here.",
+		"cupboard_open_right": "The rat sure looks comfortable in the cupboard. At least SOMEONE managed to live peacefully in this house.",
+		"door_left": "Don't be a bummer. It's too early to go to bed.",
+		"door_right": "The door is jammed. I think there was some kind of trick to open it...",
+		"joystick_right": "My old joystick! It has my bite marks on it. Damned \"Nintendo hard\".",
+		"note_right": "It's a note: \"Left you some afternoon snacks. Don't forget to clean up the table after eating!\" Mom",
+		"phone_left": "Mom said I should only call in an emergency.",
+		"phone_right": "I can't understand how there is people that still use one of these cursed machines.",
+		"phone_ring_left": "MOM: Stop playing videogames. Go to your room and do your homework! Your dad jammed the door out of rage. Remember pushing both triggers to open it.",
+		"phone_ring_right": "So... pushing both triggers at the same time. Mom sure called from work to tell me the weirdest stuff.",
+		"phonebook_right": "Mom's phonebook. She wrote her work's number in a corner of the cover.",
+		"rat_right": "There's something under this rat, but she's ravenous! I won't risk touching her.",
+	},	
+	"level3":
+	{
+		"car1_left": "This is my favorite toy car.",
+		"car1_right": "I remember this car was really fast.",
+		"car2_left": "This is my least favorite toy car.",
+		"car2_right": "I don't know why, but I've always resented this race car.",		
+		"chest_left": "I always put away my toys and games. Why do they say I misbehave?",
+		"chest_right": "It's locked. Shocking.",
+		"console_right": "8 bits of pure gold!",
+		"drawer_left": "My best marbles, my walkie-talkie, my Pokémon stickers. All safe and sound in my nightstand.",
+		"drawer_right": "I used to put all my most beloved stuff here. They are all in perfect shape to this day!",
+		"library_left": "Mom and Dad won't come home 'til midnight. I'm in no rush to do my homework.",
+		"library_right": "\"Alice in Blunderland\", \"The Racist Duckling\", \"Choose Your Own Advertisement\"... These were some reall crappy kid books.",
+		"tv_left": "Oh, it's almost time for Dragon Ball Z! But better don't get distracted...",
+		"tv_right": "Incredible, but it still works!",
+		"tv_ready_left": "...",
+		"tv_ready_right": "...",
 	}
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class GridManager : MonoBehaviour {
 	public static void ResetGrid() {
 		for (var x = 0; x < width; x++) {
 			for (var y = 0; y < height; y++) {
-				grid[x, y] = new Cell();
+				grid[x, y] = new Cell(x, y);
 			}
 		}
 	}
@@ -47,7 +48,12 @@ public class GridManager : MonoBehaviour {
 			return grid[(int) position.x, (int) position.y];
 		}
 		catch (Exception e) {
-			return new Cell();
+			return new Cell(-1,-1);
 		}
+	}
+
+	public static void RemoveItemIn(int itemPositionX, int itemPositionY, Item potLeft) {
+		var cell = GetCell(new Vector2(itemPositionX, itemPositionY));
+		cell.SetItem(null);
 	}
 }

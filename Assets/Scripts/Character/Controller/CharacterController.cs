@@ -96,7 +96,7 @@ public class CharacterController : UnityXboxController {
 
 		if (_gameManager.CanMoveTo(NextMovement(direction))) {
 			position = NextMovement(direction);
-			transform1.position = position;
+			_gameManager.MoveCharacter(this, position);
 		}		
 	}
 
@@ -119,11 +119,12 @@ public class CharacterController : UnityXboxController {
 	{
 		return NextMovement(_currentDirection);
 	}
+}
 
-	private enum Direction {
-		Up,
-		Down,
-		Left,
-		Right
-	}
+
+public enum Direction {
+	Up,
+	Down,
+	Left,
+	Right
 }

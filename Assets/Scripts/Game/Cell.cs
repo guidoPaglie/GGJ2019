@@ -2,11 +2,19 @@ using UnityEngine;
 
 public class Cell
 {
+    private readonly int _x;
+    private readonly int _y;
     private bool _walkable;
     private Item _item;
 
-    public Cell() {
+    public Cell(int x, int y) {
+        _x = x;
+        _y = y;
         _walkable = true;
+    }
+
+    public Vector2 Position() {
+        return new Vector2(_x, _y);
     }
 
     public void DisableWalk() {
@@ -28,9 +36,13 @@ public class Cell
 
     public void SetItem(Item item)
     {
-        if (item == null && _item != null)
+        if (item == null && _item != null && _item.isPickable)
             _item.DestroyItem();
-        
+
+        if (item != null) {
+            item.SetPosition(Position());
+        }
+
         _item = item;
     }
 }
