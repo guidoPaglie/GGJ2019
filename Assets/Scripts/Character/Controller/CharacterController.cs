@@ -2,9 +2,6 @@
 using UnityEngine;
 
 public class CharacterController : UnityXboxController {
-
-	public DialogBox dialogBox;
-	
 	[Range(1, 32)] public int cellSize;
 	public SpriteRenderer CharacterSpriteRenderer;
 	public Sprite CharacterUpSprite;
@@ -52,7 +49,6 @@ public class CharacterController : UnityXboxController {
 
 	protected override void OnLeftStickDown() {
 		Debug.Log("Down Pressed");
-		dialogBox.ShowMessage("La concha de tu madre all boys!!!");
 		MoveCharacter(Direction.Down);
 	}
 
