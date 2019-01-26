@@ -1,4 +1,4 @@
 public class Cell
 {
-    public bool characterCanWalk = true;
+    public bool characterCanWalk = false;
 }

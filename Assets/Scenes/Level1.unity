@@ -283,6 +283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   testPrefab: {fileID: 3876182958054672949, guid: c0a9216cbc40d40bab8e1cffcd18bb66,
     type: 3}
+  levelName: level1
 --- !u!1001 &4131112080533753198
 PrefabInstance:
   m_ObjectHideFlags: 0
