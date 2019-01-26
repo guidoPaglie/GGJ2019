@@ -96,6 +96,7 @@ MonoBehaviour:
   itemPosition: {fileID: 1125920002}
   isPickable: 0
   isWalkable: 0
+  message: Soy un bitcoin! SI UN BITCOIN!
 --- !u!114 &1125920002
 MonoBehaviour:
   m_ObjectHideFlags: 0
