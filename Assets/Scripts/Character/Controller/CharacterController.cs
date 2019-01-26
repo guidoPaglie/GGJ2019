@@ -33,18 +33,22 @@ public class CharacterController : UnityXboxController {
 	}
 
 	protected override void OnLeftStickLeft() {
+		Debug.Log("Left Pressed");
 		MoveCharacter(Direction.Left);
 	}
 
 	protected override void OnLeftStickRight() {
+		Debug.Log("Right Pressed");
 		MoveCharacter(Direction.Right);
 	}
 
 	protected override void OnLeftStickUp() {
+		Debug.Log("Up Pressed");
 		MoveCharacter(Direction.Up);
 	}
 
 	protected override void OnLeftStickDown() {
+		Debug.Log("Down Pressed");
 		MoveCharacter(Direction.Down);
 	}
 
@@ -52,7 +56,6 @@ public class CharacterController : UnityXboxController {
 		switch (direction) {
 			case Direction.Up:
 				Move(Direction.Up);
-
 				break;
 			case Direction.Down:
 				Move(Direction.Down);
