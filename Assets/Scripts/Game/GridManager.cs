@@ -1,27 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    private Cell[,] grid = new Cell[60,30];
+    private const int width = 30;
+    private const int height = 15;
+    
+    private Cell[,] grid = new Cell[width,height];
     public GameObject testPrefab;
     
-    // Start is called before the first frame update
     void Start()
     {
-        for (int x = 0; x < 60; x++)
+        for (int x = 0; x < width; x++)
         {
-            for (int y = 0; y < 30; y++)
+            for (int y = 0; y < height; y++)
             {
                 grid[x,y] = new Cell();
+
+                Instantiate(testPrefab, new Vector3(x * 2, y * 2,- 1), Quaternion.identity);
             }
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
