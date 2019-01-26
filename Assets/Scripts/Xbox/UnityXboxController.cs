@@ -8,36 +8,8 @@ public class UnityXboxController : MonoBehaviour {
 	private float _timer;
 
 	void FixedUpdate() {
-		if (XCI.GetButtonDown(XboxButton.A, controller)) {
+		if (InteractButtonPressed()) {
 			OnAPressed();
-		}
-
-		if (XCI.GetButtonDown(XboxButton.B, controller)) {
-			OnBPressed();
-		}
-
-		if (XCI.GetButtonDown(XboxButton.X, controller)) {
-			OnXPressed();
-		}
-
-		if (XCI.GetButtonDown(XboxButton.Y, controller)) {
-			OnYPressed();
-		}
-
-		if (XCI.GetButton(XboxButton.A, controller)) {
-			OnAHold();
-		}
-
-		if (XCI.GetButton(XboxButton.B, controller)) {
-			OnBHold();
-		}
-
-		if (XCI.GetButton(XboxButton.X, controller)) {
-			OnXHold();
-		}
-
-		if (XCI.GetButton(XboxButton.Y, controller)) {
-			OnYHold();
 		}
 
 		if (!_directionInputBlocked)
@@ -68,6 +40,12 @@ public class UnityXboxController : MonoBehaviour {
 				_directionInputBlocked = false;
 			}
 		}
+	}
+
+	private bool InteractButtonPressed()
+	{
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.E : KeyCode.M;
+		return Input.GetKeyDown(keyboardKey) || XCI.GetButtonDown(XboxButton.A, controller);
 	}
 
 	protected virtual bool LeftButtonPressed() {
@@ -105,26 +83,6 @@ public class UnityXboxController : MonoBehaviour {
 	}
 
 	protected virtual void OnAPressed() {
-	}
-
-	protected virtual void OnBPressed() {
-	}
-
-	protected virtual void OnXPressed() {
-	}
-
-	protected virtual void OnYPressed() {
-	}
-
-	protected virtual void OnAHold() {
-	}
-
-	protected virtual void OnBHold() {
-	}
-
-	protected virtual void OnYHold() {
-	}
-
-	protected virtual void OnXHold() {
+		
 	}
 }
