@@ -6,6 +6,7 @@ public class LevelController : MonoBehaviour {
     public string levelName;
     public Vector2 initialCharacterLeftPosition;
     public Vector2 initialCharacterRightPosition;
+    protected GameManager _gameManager;
     
     public void Init() {
         OnStart();
@@ -21,5 +22,9 @@ public class LevelController : MonoBehaviour {
     public List<CellPosition> GetCellPositions() {
         var textAsset = Resources.Load<TextAsset>(levelName);
         return JsonConvert.DeserializeObject<List<CellPosition>>(textAsset.text);
+    }
+
+    public void SetGameManager(GameManager gameManager) {
+        _gameManager = gameManager;
     }
 }
