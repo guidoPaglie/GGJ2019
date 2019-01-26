@@ -45,15 +45,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: 1
+  directionInputDelay: 0.1
   cellSize: 1
   CharacterSpriteRenderer: {fileID: 7695243104246821036}
-  CharacterUpSprite: {fileID: 21300000, guid: 672481867cb82455ea58aba5c8c40ff9, type: 3}
-  CharacterDownSprite: {fileID: 21300000, guid: 72db34ccdf7504cce912096e1d1e5f83,
+  CharacterUpSprite: {fileID: 21300000, guid: 254b940d70bd848d2b62b1328cdddc1c, type: 3}
+  CharacterDownSprite: {fileID: 21300000, guid: fdff3df34655f4065aa328a89166139e,
     type: 3}
-  CharacterLeftSprite: {fileID: 21300000, guid: 937e2522837c64ca9a36ba2502dcb73d,
+  CharacterLeftSprite: {fileID: 21300000, guid: c8bdfcd0c8a0547f59fb906868a79d88,
     type: 3}
-  CharacterRightSprite: {fileID: 21300000, guid: 312c81e3beb6848e499000d8881b086a,
+  CharacterRightSprite: {fileID: 21300000, guid: 5a47793ad0d7e44f9b44d1b38a5d565e,
     type: 3}
+  pickedItem: {fileID: 0}
 --- !u!1 &3616114010701184252
 GameObject:
   m_ObjectHideFlags: 0
@@ -122,7 +124,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 72db34ccdf7504cce912096e1d1e5f83, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fdff3df34655f4065aa328a89166139e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

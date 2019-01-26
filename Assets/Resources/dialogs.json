@@ -1,0 +1,38 @@
+{
+	"intro":{
+		"intro_1":"Mom died last month. Or maybe it was the month before.",
+		"intro_2":"I decided to sell the old family house, a little dwelling in the suburbs.",
+		"intro_3":"I haven't been there in years."
+	},
+	"level1":{
+		"ball_right":"Mom scold me every afternoon for playing around her flower pots.",
+		"cartridge_right":"Super Mega Star Soccer Premium 3 for NES! I loved that game!",
+		"door_left":"I'm not done playing outside. If I get inside now, mom will insist I make my homework!",
+		"pot_left":"Mom loves this stupid plant. She says it can grow up to be huge.",
+		"tree_right":"Stupid plant, it's on my way! Guess mom was right..."
+	},
+	"level2":{
+		"cookies_left":"value",
+		"cupboard_left":"value",
+		"cupboard_right":"value",
+		"door_left":"value",
+		"door_right":"value",
+		"joystick_right":"value",
+		"note_right":"value",
+		"phone_left":"value",
+		"phone_right":"value",
+		"phonebook_right":"value",
+		"rat_right":"value"
+	},
+	"level3":{
+		"chest_left":"value",
+		"chest_right":"value",
+		"console_right":"value",
+		"drawer_left":"value",
+		"drawer_right":"value",
+		"library_left":"value",
+		"library_right":"value",
+		"tv_left":"Oh, it's almost time for Dragon Ball Z! But better don't get distracted...",
+		"tv_right":"Incredible, but it still works!"
+	}
+}

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -13,19 +14,25 @@ public class GameManager : MonoBehaviour
     public LevelController level1;
     public LevelController level2;
     public LevelController level3;
+    private LevelController _currentLevel;
     
+    private Dictionary<string, Dictionary<string, string>> dialogs = new Dictionary<string, Dictionary<string, string>>();
     // Start is called before the first frame update
     void Start()
     {
+        var textAsset = Resources.Load<TextAsset>("dialogs");
+        dialogs = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(textAsset.text);
+        
         characterLeft.SetGameManager(this);
         characterRight.SetGameManager(this);
-        LoadLevel(level1);
+        LoadLevel(level1);        
     }
 
     private void LoadLevel(LevelController level)
     {
         characterLeft.transform.position = level.initialCharacterLeftPosition;
         characterRight.transform.position = level.initialCharacterRightPosition;
+        _currentLevel = level;
     }
 
     public void PerformAction(CharacterController character)
@@ -48,7 +55,7 @@ public class GameManager : MonoBehaviour
 
         if (!string.IsNullOrEmpty(item.message))
         {
-            currentDialogBox.ShowMessage(item.message);
+            currentDialogBox.ShowMessage(dialogs[_currentLevel.levelName][item.message]);
         }
     }
 
