@@ -10,6 +10,7 @@ public class DialogBox : MonoBehaviour {
     private float _timer;
     
     public void ShowMessage(string message) {
+        StopAllCoroutines();
         animator.SetTrigger("In");
         _timer = 0;
         text.text = "";

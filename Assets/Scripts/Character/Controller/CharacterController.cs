@@ -10,28 +10,21 @@ public class CharacterController : UnityXboxController {
 	public Sprite CharacterRightSprite;
 	private Direction _currentDirection = Direction.Up;
 
-	private bool _isJumping;
+	private GameManager _gameManager; 
 
 	void Awake() {
 		UpdateSprite(_currentDirection);
 	}
 
+	public void SetGameManager(GameManager gameManager)
+	{
+		_gameManager = gameManager;
+	}
+
 	protected override void OnAPressed() {
 		Debug.Log("A Pressed");
+		_gameManager.PerformAction(this);
 	}
-
-	protected override void OnBPressed() {
-		Debug.Log("B Pressed");
-	}
-
-	protected override void OnYPressed() {
-		Debug.Log("Y Pressed");
-	}
-
-	protected override void OnXPressed() {
-		Debug.Log("X Pressed");
-	}
-
 	protected override void OnLeftStickLeft() {
 		Debug.Log("Left Pressed");
 		MoveCharacter(Direction.Left);
@@ -99,7 +92,7 @@ public class CharacterController : UnityXboxController {
 		var transform1 = transform;
 		var position = transform1.position;
 
-		if (GridManager.CanMoveTo(NextMovement(direction))) {
+		if (_gameManager.CanMoveTo(NextMovement(direction))) {
 			position = NextMovement(direction);
 			transform1.position = position;
 		}		
@@ -118,6 +111,11 @@ public class CharacterController : UnityXboxController {
 			default:
 				throw new ArgumentOutOfRangeException(nameof(direction), direction, null);
 		}
+	}
+
+	public Vector2 FacingPosition()
+	{
+		return NextMovement(_currentDirection);
 	}
 
 	private enum Direction {

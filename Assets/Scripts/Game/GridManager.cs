@@ -40,4 +40,14 @@ public class GridManager : MonoBehaviour {
 			return false;
 		}
 	}
+
+	public static Cell GetCell(Vector2 position)
+	{
+		try {
+			return grid[(int) position.x, (int) position.y];
+		}
+		catch (Exception e) {
+			return new Cell();
+		}
+	}
 }

@@ -19,6 +19,11 @@ public class Cell
         return _walkable && (_item == null || _item.isWalkable);
     }
 
+    public Item GetItem()
+    {
+        return _item;
+    }
+
     public void SetItem(Item item) {
         _item = item;
     }

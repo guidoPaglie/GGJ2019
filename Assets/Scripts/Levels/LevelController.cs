@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class LevelController : MonoBehaviour {
     public string levelName;
-    public Vector2 initialCharacter1Position;
-    public Vector2 initialCharacter2Position;
+    public Vector2 initialCharacterLeftPosition;
+    public Vector2 initialCharacterRightPosition;
 
     public List<Item> levelItems = new List<Item>();
     
