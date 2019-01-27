@@ -133,6 +133,8 @@ namespace Levels
                     break;
 
                 case "chest_right_key":
+                    AudioManager.Instance.PlaySound("open_chest");
+
                     _gameManager.ItemDepositRight(item);
                     chest_right.id = "chest_right";
                     var console =
