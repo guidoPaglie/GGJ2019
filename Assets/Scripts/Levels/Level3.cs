@@ -96,6 +96,8 @@ namespace Levels
                     chest_right.id = "chest_right";
                     var console = GridManager.GetCell(new Vector2(console_right.itemPosition.x, console_right.itemPosition.y));
                     _gameManager.PerformPick(console, _gameManager.characterRight);
+                    _gameManager.HighlightItem("Consola");
+
                     break;
             }
         }
