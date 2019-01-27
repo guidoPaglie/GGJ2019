@@ -112,14 +112,21 @@ namespace Levels
                     });
                     break;
                 case "key_left":
+                    AudioManager.Instance.PlaySound("pickup_item_2");
+
                     drawer_left.id = "drawer_left_key";
                     break;
                 case "drawer_left_key":
+                    AudioManager.Instance.PlaySound("drop_item_3");
+
+                    
                     drawer_left.id = "drawer_left";
                     drawer_right.id = "drawer_right_key";
                     _gameManager.ItemDepositLeft(item);
                     break;
                 case "drawer_right_key":
+                    AudioManager.Instance.PlaySound("pickup_item_2");
+
                     var cell = GridManager.GetCell(new Vector2(key_right.itemPosition.x, key_right.itemPosition.y));
                     _gameManager.PerformPick(cell, _gameManager.characterRight);
                     chest_right.id = "chest_right_key";
@@ -158,6 +165,7 @@ namespace Levels
                     TvBlockRight.id = "tv_ready_right_2";
 
                     tvSoccer.SetActive(true);
+                    AudioManager.Instance.PlaySound("tv_soccer_intro");
 
                     StartCoroutine(addBridgeBlocks());
                     break;
@@ -186,6 +194,7 @@ namespace Levels
 
         private void turnOffNoise()
         {
+            AudioManager.Instance.PlaySound("tv_off");
             tvNoise.SetActive(false);
         }
 
