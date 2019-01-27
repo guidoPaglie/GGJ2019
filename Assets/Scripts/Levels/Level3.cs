@@ -75,6 +75,7 @@ namespace Levels
                 GridManager.InsertItemIn(TvBlockRight);
             
                 floors.ForEach(GridManager.InsertItemIn);
+                AudioManager.Instance.OnResumeMusic();
             });           
         }
 

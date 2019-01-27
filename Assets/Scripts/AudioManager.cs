@@ -83,4 +83,14 @@ public class AudioManager : MonoBehaviour
         FxAudioSource.clip = clip;
         FxAudioSource.Play();
     }
+
+    public void PauseMusic()
+    {
+        MusicAudioSource.Pause();
+    }
+
+    public void OnResumeMusic()
+    {
+        MusicAudioSource.Play();
+    }
 }

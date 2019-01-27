@@ -41,6 +41,7 @@
 			GridManager.InsertItemIn(phone_left);
 			GridManager.InsertItemIn(door_left);
 			GridManager.InsertItemIn(door_right);	
+			AudioManager.Instance.OnResumeMusic();
 		});
 	}
 
