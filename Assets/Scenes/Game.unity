@@ -473,7 +473,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952c00a2ff3df43d69a840cac5d7ffea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: level2
+  levelName: level3
   TestPrefab: {fileID: 3876182958054672949, guid: c0a9216cbc40d40bab8e1cffcd18bb66,
     type: 3}
 --- !u!4 &514317421
@@ -1519,7 +1519,7 @@ PrefabInstance:
     - target: {fileID: 6467938977392896310, guid: b8056987bf2ee467e8ea2374028b141c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3478201528118558565, guid: b8056987bf2ee467e8ea2374028b141c,
         type: 3}
