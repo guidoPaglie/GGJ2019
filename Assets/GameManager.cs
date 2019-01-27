@@ -50,8 +50,12 @@ public class GameManager : MonoBehaviour {
 		GridManager.UpdateGridFrom(cellpositionsList);
 
 		_currentLevel.Init();
-		PickablesLeft.ResetItems();
-		PickablesRight.ResetItems();
+		
+		if (PickablesLeft != null && PickablesRight != null) // TODO delete condition after merge!
+		{
+			PickablesLeft.ResetItems();
+			PickablesRight.ResetItems();
+		}
 	}
 
 	public void PerformAction(CharacterController character) {
