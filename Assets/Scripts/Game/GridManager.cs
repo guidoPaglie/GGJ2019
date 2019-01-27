@@ -25,6 +25,11 @@ public class GridManager : MonoBehaviour {
 
 	public static void InsertItemIn(int x, int y, Item item) {
 		grid[x, y].SetItem(item);
+		item.gameObject.SetActive(true);
+	}
+	
+	public static void InsertItemIn(Item item) {
+		InsertItemIn(item.itemPosition.x, item.itemPosition.y, item);
 	}
 
 	public static void UpdateGridFrom(List<CellPosition> cellPositions) {
