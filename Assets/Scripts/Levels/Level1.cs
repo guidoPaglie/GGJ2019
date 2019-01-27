@@ -22,6 +22,7 @@ public class Level1 : LevelController {
 	[FormerlySerializedAs("brokenBallRight")] public Item ballRight;
 
 	protected override void OnStart() {
+		base.OnStart();
 		_gameManager.characterLeft.enabled = false;
 		cartridgeLeft.gameObject.SetActive(false);
 		cartridgeRight.gameObject.SetActive(false);

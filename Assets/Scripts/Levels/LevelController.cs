@@ -8,11 +8,14 @@ public class LevelController : MonoBehaviour {
     public Vector2 initialCharacterRightPosition;
     protected GameManager _gameManager;
     
+    public List<Item> dialogs;
+    
     public void Init() {
         OnStart();
     }
     
     protected virtual void OnStart() {
+        dialogs.ForEach(GridManager.InsertItemIn);
     }
 
     public virtual void OnTriggerEvent(string itemId) {

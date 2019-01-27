@@ -17,13 +17,19 @@
 		"pot_left": "Mom loves this stupid plant. She says one day it will overgrow its own pot. What a ridiculous thought!",
 		"pot_right": "It would be moderately inconvenient to get through this stupid plant! I should've destroyed it when I had the chance.",
 		"pot_broken_left": "I didn't do it!",
-		"radio_right": "",
-
+		"radio_right": "Dad used to hear some lousy folk music in this radio.",
+		"window_left": "Guess nobody's home... Again.",
+		"window_right": "I can barely see through the glasses. They are really dirty.",
+		"pots_left": "I can't practice my powerful tiger shot with all these lame pots in the way!",
+		"pots_right": "My mother sure loved plants. I remember I used to feel jealous of a succulent.",
+		"trash_right": "This place is in pretty bad shape. I guess selling this house won't be easy.",		
+		"stone_right": "Why did my mother had a boulder in the middle of the frontyard? I never understood that woman.",
+		"branches_right": "I hope this isn't one of those branching stories.",
 	},	
 	"level2":
 	{
-		"clock_left": "",
-		"clock_right": "",		
+		"clock_left": "Mom and Dad won't come home for a while.",
+		"clock_right": "I have spent enough time watching this clock, hoping it will move faster.",		
 		"cookies_left": "Best to put these cookies away. I don't wanna get grounded for life!",
 		"couch_left": "We have this couch in case a guest wants to watch us have dinner.",
 		"couch_right": "Dad insisted on buying this third couch. It was preposterous.",		
@@ -36,7 +42,7 @@
 		"door_left": "Don't be a spoilsport! It's too early to go to bed.",
 		"door_right": "This door is jammed. I remember there was a trick to open it... How was it?",
 		"joystick_right": "My old joystick! It still has the marks of my bites on it. Damned \"Nintendo hard game\"!.",
-		"coffeemug_left": "",
+		"coffeemug_left": "I'm not allowed to drink coffee. I wish I was an adult so I could do whatever I want!",
 		"note_right": "It's an old note that reads: \"I left you some snacks over the table. Do not forget to clean everything up once you are done!\" -Mom",
 		"phone_left": "Mom said I can only call her in case of an emergency.",
 		"phone_right": "I do not understand how there can be people who still use these wicked machines?!",
@@ -46,13 +52,16 @@
 		"picture_family_left": "Dad, Mom and me portrayed in probably the last time we were all in the same room over the last two years",
 		"picture_family_right": "I remember the day we took that picture. We needed to finish the cammera roll.",
 		"rat_right": "Something seems to be trapped under this huge rat... But she's ravenous! Better not disturb her.",
+		"pot_left": "Mom put this flowerpot here so I can't play soccer inside the house.",
+		"pot_right": "When I send mom to the retirement home, I remember she took this flower with her in a tiny pot.",
+
 	},	
 	"level3":
 	{
 		"car1_left": "This is my favorite toy car!",
 		"car1_right": "My dad made this...",
 		"car2_left": "My Mom picked this one for me. She clearly didn't know a thing about toy cars... or even me!",
-		"car2_right": "I can't remember why but I always hated this toy car. It might be its pinkish color!",		
+		"car2_right": "I didn't like this car's girlie color, but it's actually nice.",		
 		"chest_left": "My parents are always asking me to put my toys and games away! They say they distract me from my duties.",
 		"chest_right": "Like all the fun things in this house, my old toys and games were constantly kept under lock!",
 		"console_right": "8 bits of pure gold!",
@@ -64,7 +73,11 @@
 		"radio_right": "",
 		"tv_left": "Oh, it's almost time for Dragon Ball Z! But better don't get distracted...",
 		"tv_right": "Incredible, but it still works!",
-		"tv_ready_left": "...",
+		"tv_ready_left": "I don't wanna watch TV. I want to play videogames!",
 		"tv_ready_right": "...",
+		"bed_left": "I'm not a baby! It's too early to go to sleep.",
+		"bed_right": "The wood looks rotten and it's full of bedbugs. I won't lie on it.",
+		"window_left": "I can see Mr. Novell's house from here. Hi, Mr. Novell!",
+		"window_right": "Mr. Novell's house was tear down after he became crazy and killed all those cats. Now there's a brewery pub there.",
 	}
 }

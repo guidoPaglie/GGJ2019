@@ -21,7 +21,9 @@
 	private bool hasJoystick;
 	private bool hasPhonebook;
 
-	protected override void OnStart() {
+	protected override void OnStart()
+	{
+		base.OnStart();
 		_gameManager.characterLeft.enabled = false;
 		_gameManager.characterRight.enabled = false;
 		LevelIntro.gameObject.SetActive(true);
