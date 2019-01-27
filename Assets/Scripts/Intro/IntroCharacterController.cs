@@ -10,6 +10,7 @@ namespace Intro
         public SpriteRenderer PlayerImage;
         public XboxController Controller;
         public GameObject PlayerText;
+        public Animator Animator;
         
         private bool _pressedStart;
         
@@ -26,6 +27,7 @@ namespace Intro
                 PlayerImage.sprite = PlayerEndSprite;
                 PlayerText.SetActive(false);
 
+                Animator.SetTrigger("Play");
                 if (Controller == XboxController.First)
                 {
                     IntroManager.playerOneIsPlaying = true;
@@ -50,6 +52,7 @@ namespace Intro
 
         private void MovePlayer()
         {
+            
             transform.position += Vector3.down * 5 * Time.deltaTime;
         }
     }
