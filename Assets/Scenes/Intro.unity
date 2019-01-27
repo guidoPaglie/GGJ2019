@@ -308,7 +308,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1794129812}
+  - {fileID: 511756191}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -424,7 +424,7 @@ GameObject:
   - component: {fileID: 511756191}
   - component: {fileID: 511756190}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -485,12 +485,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 511756189}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 11.85, z: -0.38869122}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -930.85004, y: -517.21454, z: -0.7553513}
+  m_LocalScale: {x: 1.9433197, y: 1.9433197, z: 1.9433197}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 337069812}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &514525860
 GameObject:
@@ -905,7 +905,7 @@ MonoBehaviour:
   turnoffGO:
   - {fileID: 360100717329351853}
   - {fileID: 6424964507243306800}
-  - {fileID: 1794129811}
+  - {fileID: 511756189}
   - {fileID: 918326367}
   - {fileID: 860728655}
   - {fileID: 234270461}
@@ -1891,95 +1891,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &1794129811
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1794129812}
-  - component: {fileID: 1794129814}
-  - component: {fileID: 1794129813}
-  - component: {fileID: 1794129815}
-  m_Layer: 5
-  m_Name: logo
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1794129812
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794129811}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 337069812}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 1}
-  m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -128}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 1}
---- !u!114 &1794129813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794129811}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6d44e651a17ff435ab62d0e570a51dd9, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1794129814
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794129811}
-  m_CullTransparentMesh: 0
---- !u!114 &1794129815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1794129811}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1254083943, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AspectMode: 0
-  m_AspectRatio: 1
 --- !u!1 &1926532515
 GameObject:
   m_ObjectHideFlags: 0
@@ -2215,42 +2126,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c3b7040d709456a8ca3262d14a9545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MusicAudioSource: {fileID: 1126573159}
-  FxAudioSource: {fileID: 603920010}
-  AudioClips:
-  - {fileID: 8300000, guid: cf8bfb08fddf94f05b0d0fabddf73b13, type: 3}
-  - {fileID: 8300000, guid: 2c65ba619c8c84ab19b1824e578da984, type: 3}
-  - {fileID: 8300000, guid: 7253ef8f923304524addc558fed3e0c5, type: 3}
-  - {fileID: 8300000, guid: e703dab39ed444fe2b0a77c6595382df, type: 3}
-  - {fileID: 8300000, guid: 934d926b11f29475b94dd25429924afd, type: 3}
-  - {fileID: 8300000, guid: aa234df70cd944db98e6ce0fbd132c7d, type: 3}
-  - {fileID: 8300000, guid: 5596086c5a3014e6c92662ed78f6ea82, type: 3}
-  - {fileID: 8300000, guid: faebd82336f8d437687d8f7e9a9aec03, type: 3}
-  - {fileID: 8300000, guid: e6395571153f04862b5fe8cc11acd86c, type: 3}
-  - {fileID: 8300000, guid: bbdfe6374839b47c29be38d68e43e0f2, type: 3}
-  - {fileID: 8300000, guid: 819fe00f973dd43c3a8e29852fcc30b2, type: 3}
-  - {fileID: 8300000, guid: 0266358b0639148e39876770c14f36e4, type: 3}
-  - {fileID: 8300000, guid: 9de6861a085124bfba7787964434cc0d, type: 3}
-  - {fileID: 8300000, guid: f6dbda6467a6f4ab0a8d5d7481eb2edd, type: 3}
-  - {fileID: 8300000, guid: 40440ab7b02c943bb81216c5496c7042, type: 3}
-  - {fileID: 8300000, guid: 2b295a5b3f43541b6900fcba67add54d, type: 3}
-  - {fileID: 8300000, guid: e96e08165d7134d1592347377ea1a9dd, type: 3}
-  - {fileID: 8300000, guid: 5b5e076a0e93545819a4ab5634982536, type: 3}
-  - {fileID: 8300000, guid: 0c3756357cf6840c68cd71c03c30cfa9, type: 3}
-  - {fileID: 8300000, guid: a9dd74ba63ef947caa4c5c061e07185a, type: 3}
-  - {fileID: 8300000, guid: b1d8b7d1cfb4e4fcd9ca6a83697b0e48, type: 3}
-  - {fileID: 8300000, guid: 0a123d3b2102e4c79ae81e673604afbf, type: 3}
-  - {fileID: 8300000, guid: 0de2d1d608bef41aa87214bc0d7dd269, type: 3}
-  - {fileID: 8300000, guid: 639a699d0c83841c5b862f9f6a378aa9, type: 3}
-  - {fileID: 8300000, guid: 737c907023f9543a6951e360ec33edb3, type: 3}
-  - {fileID: 8300000, guid: cb93cb51f99234c4e96e2be1aae5e7b6, type: 3}
-  - {fileID: 8300000, guid: 1ff8b868a419a4c2296ad45397c012bb, type: 3}
-  - {fileID: 8300000, guid: 6de3d9bfa15e84c819c039c9319824ba, type: 3}
-  - {fileID: 8300000, guid: 1797dd417bf4f483ea576cf9a1587969, type: 3}
-  - {fileID: 8300000, guid: 2bcbaeacf2b114d3e91ef6e51f7a5241, type: 3}
-  - {fileID: 8300000, guid: 5855cd84f83ed4cca93c83357abd4bd0, type: 3}
-  - {fileID: 8300000, guid: 494dab350f17a478f9db97ac62f45b08, type: 3}
-  - {fileID: 8300000, guid: 381ef99e1b4d54585b56f60665a14864, type: 3}
+  MusicAudioSource: {fileID: 0}
+  FxAudioSource: {fileID: 0}
+  AudioClips: []
 --- !u!4 &2092812568
 Transform:
   m_ObjectHideFlags: 0
