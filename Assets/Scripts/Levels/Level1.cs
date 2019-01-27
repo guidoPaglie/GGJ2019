@@ -46,12 +46,10 @@ public class Level1 : LevelController {
 
 	private bool _leftSideEnabled = false;
 	public override void OnTriggerEvent(string itemId) {
-		if (!_leftSideEnabled) {
-			EnablePlayerLeft();			
-		}
 		
 		switch (itemId) {
 			case "memory_trigger":
+				EnablePlayerLeft();	
 				memoryTrigger01.DestroyItem();
 				memoryTrigger02.DestroyItem();
 				memoryTrigger03.DestroyItem();
