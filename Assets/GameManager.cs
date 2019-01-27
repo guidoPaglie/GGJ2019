@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level2);
+		LoadLevel(level1);
 	}
 
 
@@ -51,11 +51,8 @@ public class GameManager : MonoBehaviour {
 
 		_currentLevel.Init();
 		
-		if (PickablesLeft != null && PickablesRight != null) // TODO delete condition after merge!
-		{
-			PickablesLeft.ResetItems();
-			PickablesRight.ResetItems();
-		}
+		PickablesLeft.ResetItems();
+		PickablesRight.ResetItems();
 	}
 
 	public void LoadLevel3()

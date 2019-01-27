@@ -7,17 +7,22 @@ namespace Levels
     public class Inventory : MonoBehaviour
     {
         public List<SpriteRenderer> ItemsLevelsSR;
-        public CharacterController PlayerControllerTwo;
+        public CharacterController PlayerControllerRight;
 
         private string currentItemId = "";
         private int inventoryCount;
 
+        private void Awake()
+        {
+            ItemsLevelsSR.ForEach(sr => sr.enabled = false);
+        }
+
         private void Update()
         {
-            if (!String.IsNullOrEmpty(PlayerControllerTwo.pickedItemId) &&
-                !currentItemId.Equals(PlayerControllerTwo.pickedItemId))
+            if (!String.IsNullOrEmpty(PlayerControllerRight.pickedItemId) &&
+                !currentItemId.Equals(PlayerControllerRight.pickedItemId))
             {
-                currentItemId = PlayerControllerTwo.pickedItemId;
+                currentItemId = PlayerControllerRight.pickedItemId;
 
                 if (!IsItemLevel(currentItemId)) 
                     return;
