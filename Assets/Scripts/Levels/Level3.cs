@@ -49,7 +49,7 @@ namespace Levels
             _gameManager.characterLeft.enabled = false;
             _gameManager.characterRight.enabled = false;
             LevelIntro.gameObject.SetActive(true);
-            LevelIntro.StartIntro("Y llegue al cuarto donde me tocaba...   hacer la tarea", () => {
+            LevelIntro.StartIntro("But perhaps there was one place where I didn't feel so lonely...", () => {
                 _gameManager.characterLeft.enabled = true;
                 _gameManager.characterRight.enabled = true;
                 GridManager.InsertItemIn(chest_left);
