@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -144,11 +146,7 @@ namespace Levels
 
                     tvSoccer.SetActive(true);
 
-                    floors.ForEach(f =>
-                    {
-                        f.GetComponent<SpriteRenderer>().enabled = true;
-                        f.isWalkable = true;
-                    });
+                    StartCoroutine(addBridgeBlocks());
                     break;
 
                 case "tv_ready_right_2":
@@ -158,6 +156,18 @@ namespace Levels
                     Debug.Log("Ending");
                     Invoke("startEndingAnimation", 2);
                     break;
+            }
+        }
+
+        private IEnumerator addBridgeBlocks()
+        {
+            for (int i = 0; i < floors.Count; i++)
+            {
+                Item block = floors[i];
+                block.GetComponent<SpriteRenderer>().enabled = true;
+                block.isWalkable = true;
+
+                yield return new WaitForSeconds(0.5f);
             }
         }
 
