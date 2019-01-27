@@ -69,6 +69,8 @@
 				
 				_gameManager.AnimateItemTo(rat, Direction.Up, 1, () =>
 				{
+					Invoke("RatAudio", 0.2f);
+
 					GridManager.InsertItemIn(joystick);
 
 					_gameManager.AnimateItemTo(rat, Direction.Right, 3, () =>
@@ -138,6 +140,12 @@
 					AudioManager.Instance.PlaySound("door_jammed");
 				break;
 		}
+	}
+
+	private void RatAudio()
+	{
+		if (gameObject.activeSelf)
+			AudioManager.Instance.PlaySound("rat_grunt");
 	}
 
 	private void ringPhoneEvent()

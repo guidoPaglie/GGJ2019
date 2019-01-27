@@ -88,7 +88,7 @@ public class Level1 : LevelController {
 					ballLeft.id = "";
 				});
 				break;
-			case "door1":
+			case "door_left":
 				AudioManager.Instance.PlaySound("door_jammed");
 				break;
 		}

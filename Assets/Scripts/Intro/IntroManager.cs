@@ -23,7 +23,7 @@ public class IntroManager : MonoBehaviour
 
     private void Awake()
     {
-        AudioManager.Instance.PlayMusic(true);
+        AudioManager.Instance.PlayMusic(AudioManager.MusicType.INTRO);
     }
 
     private void Update()

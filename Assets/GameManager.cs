@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour {
 		characterRight.SetGameManager(this);
 		LoadLevel(level1);
 		
-		AudioManager.Instance.PlayMusic(false);
+		AudioManager.Instance.PlayMusic(AudioManager.MusicType.GAME);
 	}
 
 
@@ -65,6 +65,9 @@ public class GameManager : MonoBehaviour {
 
 		dialogBoxLeft.Reset();
 		dialogBoxRight.Reset();
+		
+		if (_currentLevel != level1)
+			AudioManager.Instance.PlaySound("stage_clear");
 	}
 
 	public void LoadLevel3()
