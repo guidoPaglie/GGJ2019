@@ -21,6 +21,11 @@ public class IntroManager : MonoBehaviour
         "I haven't been there in years."
     };
 
+    private void Awake()
+    {
+        AudioManager.Instance.PlayMusic(true);
+    }
+
     private void Update()
     {
         if (showingMessages)

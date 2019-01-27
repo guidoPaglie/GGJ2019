@@ -44,6 +44,8 @@ public class AudioManager : MonoBehaviour
 
     public void PlayMusic(bool isIntro)
     {
+        MusicAudioSource.clip = isIntro ? IntroMusic : GameMusic;
+        MusicAudioSource.Play();
     }
 
     private void Play(string id)
