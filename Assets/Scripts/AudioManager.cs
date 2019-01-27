@@ -1,39 +1,49 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager _audioManagerInstance;
+    private readonly Dictionary<string, AudioClip> AudioClipsByIds = new Dictionary<string, AudioClip>();
     
+    public static AudioManager Instance;
+
     public AudioSource MusicAudioSource;
-    public AudioSource FxAudioSource;
-
-    public List<AudioClip> AudioClips;
-
-    private Dictionary<string, AudioClip> AudioClipsByIds;
+    public AudioClip IntroMusic;
+    public AudioClip GameMusic;
     
+    public AudioSource FxAudioSource;
+    public List<AudioClip> FxAudioClips;
+
     private void Awake()
     {
-        ConfigureMap();        
-        
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        ConfigureFxs();
+
         DontDestroyOnLoad(gameObject);
 
-        _audioManagerInstance = this;
+        Instance = this;
     }
 
-    private void ConfigureMap()
+    private void ConfigureFxs()
     {
-        AudioClips.ForEach(clip =>
+        FxAudioClips.ForEach(clip =>
         {
             var id = clip.name.Replace("_SFX", "");
             AudioClipsByIds.Add(id, clip);
         });
     }
 
-    public static void PlaySound(string id)
+    public void PlaySound(string id)
     {
-        _audioManagerInstance.Play(id);
+        Instance.Play(id);
+    }
+
+    public void PlayMusic(bool isIntro)
+    {
     }
 
     private void Play(string id)
@@ -41,7 +51,7 @@ public class AudioManager : MonoBehaviour
         var clip = AudioClipsByIds[id];
         if (clip == null)
             return;
-        
+
         FxAudioSource.clip = clip;
         FxAudioSource.Play();
     }
