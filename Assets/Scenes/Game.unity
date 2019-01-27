@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -472,7 +472,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &514317420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 514317419}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 952c00a2ff3df43d69a840cac5d7ffea, type: 3}
   m_Name: 
@@ -744,18 +744,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e510ed53199e64d68831219af8ed0daf, type: 3}
---- !u!114 &1015245603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1015245603, guid: e510ed53199e64d68831219af8ed0daf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1015245602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb08630968b048ad8fe31515c775ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1060567556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1114,18 +1102,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 319502129, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
-      propertyPath: id
-      value: door_left
-      objectReference: {fileID: 0}
-    - target: {fileID: 869702428, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
-      propertyPath: message
-      value: door_right
-      objectReference: {fileID: 0}
-    - target: {fileID: 869702428, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
-      propertyPath: id
-      value: door_right
-      objectReference: {fileID: 0}
     - target: {fileID: 3915165096242628931, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1243,6 +1219,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 319502129, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
+      propertyPath: id
+      value: door_left
+      objectReference: {fileID: 0}
     - target: {fileID: 319502128, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
       propertyPath: y
       value: 12
@@ -1254,6 +1234,14 @@ PrefabInstance:
     - target: {fileID: 480444474, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 869702428, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
+      propertyPath: message
+      value: door_right
+      objectReference: {fileID: 0}
+    - target: {fileID: 869702428, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
+      propertyPath: id
+      value: door_right
       objectReference: {fileID: 0}
     - target: {fileID: 869702427, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
       propertyPath: y
@@ -1421,7 +1409,7 @@ MonoBehaviour:
   dialogBoxRight: {fileID: 1881837029}
   level1: {fileID: 4131112080533753201}
   level2: {fileID: 3976011398835744528}
-  level3: {fileID: 1015245603}
+  level3: {fileID: 6170064031692701325}
   PickablesLeft: {fileID: 162067549}
   PickablesRight: {fileID: 1650043517}
 --- !u!114 &1482430471533249317 stripped
@@ -1658,12 +1646,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 182178758, guid: b8056987bf2ee467e8ea2374028b141c, type: 3}
+    - target: {fileID: 8967791728829853694, guid: b8056987bf2ee467e8ea2374028b141c,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 8967791728829853694, guid: b8056987bf2ee467e8ea2374028b141c,
-        type: 3}
+    - target: {fileID: 182178758, guid: b8056987bf2ee467e8ea2374028b141c, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1679,5 +1667,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5fdd24a9c9694e1d8b29bde28da1970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6170064031692701325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6170064031692701325, guid: e510ed53199e64d68831219af8ed0daf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015245602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8609f8828a5f4499a795e5c87b966765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
