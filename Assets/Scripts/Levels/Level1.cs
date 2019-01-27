@@ -65,6 +65,8 @@ public class Level1 : LevelController {
 					GridManager.RemoveItemIn(potRight.itemPosition.x, potRight.itemPosition.y, potRight);
 					GridManager.RemoveItemIn(potRightCollider.itemPosition.x, potRightCollider.itemPosition.y, potRightCollider);
 					GridManager.InsertItemIn(brokenPotLeft.itemPosition.x, brokenPotLeft.itemPosition.y, brokenPotLeft);
+					ballLeft.message = "";
+					ballLeft.id = "";
 				});
 				break;
 		}
