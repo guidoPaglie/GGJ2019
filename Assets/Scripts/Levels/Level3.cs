@@ -178,6 +178,7 @@ namespace Levels
 
         private void startEndingAnimation()
         {
+            endingAnimator.gameObject.SetActive(true);
             endingAnimator.SetTrigger("Play");
         }
 

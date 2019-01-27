@@ -218,7 +218,7 @@ PrefabInstance:
     - target: {fileID: 7792567832725295839, guid: 058d8eb0cdab540dd8430422a0fc684e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9098351591073042379, guid: 058d8eb0cdab540dd8430422a0fc684e,
         type: 3}
@@ -839,6 +839,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9083081988937272499, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1385114323382464267, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: x
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6170064031692701325, guid: e510ed53199e64d68831219af8ed0daf,
         type: 3}
       propertyPath: floors.Array.size
@@ -954,6 +964,26 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8268769170607428765, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6683872031981550413, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110137362742484786, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 630793399242201064, guid: e510ed53199e64d68831219af8ed0daf,
+        type: 3}
+      propertyPath: x
+      value: 22
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e510ed53199e64d68831219af8ed0daf, type: 3}
 --- !u!1 &1060567556
@@ -1010,6 +1040,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DialogBoxVariantLeft
+      objectReference: {fileID: 0}
+    - target: {fileID: 5692652862252465517, guid: 6cc81d934dae64e48bca074f7bdf9114,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5692652862252465513, guid: 6cc81d934dae64e48bca074f7bdf9114,
         type: 3}
