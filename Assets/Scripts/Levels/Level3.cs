@@ -83,6 +83,7 @@ namespace Levels
             switch (item)
             {
                 case "car1_right":
+                    AudioManager.Instance.PlaySound("toy_car");
                     _car1Activated = true;
                     _gameManager.AnimateItemTo(car1_left, Direction.Up, 4, () =>
                     {
@@ -96,6 +97,7 @@ namespace Levels
                     });                    
                     break;
                 case "car2_left":
+                    AudioManager.Instance.PlaySound("toy_car");
                     _car2Activated = true;
                     _gameManager.AnimateItemTo(car2_left, Direction.Right, 2, () =>
                     {

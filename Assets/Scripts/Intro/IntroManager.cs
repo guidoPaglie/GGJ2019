@@ -58,11 +58,11 @@ public class IntroManager : MonoBehaviour
 
     private IEnumerator ShowLettersNext()
     {
-        for (int i = 0; i < messages.Count; i++)
+        foreach (var message in messages)
         {
             Message.text = "";
 
-            foreach (var letter in messages[i])
+            foreach (var letter in message)
             {
                 Message.text += letter;
                 yield return new WaitForSeconds(speed);
@@ -71,6 +71,7 @@ public class IntroManager : MonoBehaviour
             yield return new WaitForSeconds(2.0f);
         }
 
+        AudioManager.Instance.PlaySound("start_game");
         SceneManager.LoadScene("Game", LoadSceneMode.Single);
     }
 }
