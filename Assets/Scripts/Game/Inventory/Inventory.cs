@@ -27,7 +27,7 @@ namespace Levels
                 if (!IsItemLevel(currentItemId)) 
                     return;
                 
-                ItemsLevelsSR[inventoryCount].enabled = true;
+                ItemsLevelsSR[inventoryCount].gameObject.SetActive(true);
                 inventoryCount++;
                 AudioManager.Instance.PlaySound("Get_special_item");
                 
@@ -50,7 +50,7 @@ namespace Levels
 
         private void HideItems()
         {
-            ItemsLevelsSR.ForEach(sr => sr.enabled = false);
+            ItemsLevelsSR.ForEach(sr => sr.gameObject.SetActive(false));
         }
     }
 }
