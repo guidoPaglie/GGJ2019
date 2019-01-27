@@ -14,6 +14,9 @@ public class TvNoise : MonoBehaviour {
       else {
          _timer = 0;
          SpriteRenderer.flipX = !SpriteRenderer.flipX;
+         if (Random.Range(0, 10) > 5) {
+            SpriteRenderer.flipY = !SpriteRenderer.flipY;
+         }
       }
    }
 }
