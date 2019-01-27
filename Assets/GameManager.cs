@@ -144,4 +144,13 @@ public class GameManager : MonoBehaviour {
 
 		onEnd();
 	}
+
+	public void ItemDeposit(string item)
+	{
+		if (item == "cupboard_full_left")
+		{
+			characterLeft.pickedItemId = "";
+			PickablesLeft.ResetItems();
+		}
+	}
 }

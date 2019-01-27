@@ -49,6 +49,8 @@
 			case "cupboard_full_left":
 				cupboard_left.id = "cupboard_left";
 				cupboard_left_block.id = "cupboard_left";
+
+				_gameManager.ItemDeposit(item);
 				
 				_gameManager.AnimateItemTo(rat, Direction.Up, 1, () =>
 				{
