@@ -2,6 +2,7 @@
 using UnityEngine.Serialization;
 
 public class Level1 : LevelController {
+	public Animator BlackFade;
 	public Item cartridgeTrigger1;
 	public Item cartridgeTrigger2;
 	public Item cartridgeTrigger3;
@@ -14,9 +15,14 @@ public class Level1 : LevelController {
 	public Item potLeft;
 	public Item brokenPotLeft;
 	public Item ballLeft;
+	public Item memoryTrigger01;
+	public Item memoryTrigger02;
+	public Item memoryTrigger03;
+	public Item memoryTrigger04;
 	[FormerlySerializedAs("brokenBallRight")] public Item ballRight;
 
 	protected override void OnStart() {
+		_gameManager.characterLeft.enabled = false;
 		cartridgeLeft.gameObject.SetActive(false);
 		cartridgeRight.gameObject.SetActive(false);
 		brokenPotLeft.gameObject.SetActive(false);
@@ -29,15 +35,26 @@ public class Level1 : LevelController {
 		GridManager.InsertItemIn(doorLeft.itemPosition.x, doorLeft.itemPosition.y, doorLeft);
 		GridManager.InsertItemIn(doorRight.itemPosition.x, doorRight.itemPosition.y, doorRight);
 		GridManager.InsertItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y, potLeft);		
-		GridManager.InsertItemIn(ballRight.itemPosition.x, ballRight.itemPosition.y, ballRight);		
+		GridManager.InsertItemIn(ballRight.itemPosition.x, ballRight.itemPosition.y, ballRight);
+		GridManager.InsertItemIn(memoryTrigger01);
+		GridManager.InsertItemIn(memoryTrigger02);
+		GridManager.InsertItemIn(memoryTrigger03);
+		GridManager.InsertItemIn(memoryTrigger04);
 	}
 
-	void Update() {
-		Debug.Log(_gameManager.IsCharacterHoldingXYB());
-	}
-	
+	private bool _leftSideEnabled = false;
 	public override void OnTriggerEvent(string itemId) {
+		if (!_leftSideEnabled) {
+			EnablePlayerLeft();			
+		}
+		
 		switch (itemId) {
+			case "memory_trigger":
+				memoryTrigger01.DestroyItem();
+				memoryTrigger02.DestroyItem();
+				memoryTrigger03.DestroyItem();
+				memoryTrigger04.DestroyItem();
+				break;
 			case "cartridge_trigger":
 				GridManager.InsertItemIn(cartridgeLeft.itemPosition.x, cartridgeLeft.itemPosition.y, cartridgeLeft);
 				GridManager.InsertItemIn(cartridgeRight.itemPosition.x, cartridgeRight.itemPosition.y, cartridgeRight);
@@ -71,5 +88,11 @@ public class Level1 : LevelController {
 				});
 				break;
 		}
+	}
+
+	void EnablePlayerLeft() {
+		_leftSideEnabled = true;
+		BlackFade.SetTrigger("Play");
+		_gameManager.characterLeft.enabled = true;
 	}
 }

@@ -113,6 +113,9 @@ public class GameManager : MonoBehaviour {
 		if (item == null) return;
 		if (item.isTrigger) {
 			_currentLevel.OnTriggerEvent(item.id);
+			if (!string.IsNullOrEmpty(item.message)) {
+				PerformDialog(item, characterRight);
+			}
 		}
 	}
 
