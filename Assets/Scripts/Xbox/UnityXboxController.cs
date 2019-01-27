@@ -42,10 +42,9 @@ public class UnityXboxController : MonoBehaviour {
 	}
 
 	public bool IsHoldingXYB() {
-		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.X : KeyCode.M;
 		return Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.B) && Input.GetKey(KeyCode.Y) ||
-		       XCI.GetButtonDown(XboxButton.X, controller) && XCI.GetButtonDown(XboxButton.B, controller) &&
-		       XCI.GetButtonDown(XboxButton.Y, controller);
+		       XCI.GetButton(XboxButton.X, controller) && XCI.GetButton(XboxButton.B, controller) &&
+		       XCI.GetButton(XboxButton.Y, controller);
 	}
 
 	private bool InteractButtonPressed() {

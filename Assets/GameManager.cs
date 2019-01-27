@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level1);
+		LoadLevel(level2);
 	}
 
 
@@ -56,6 +56,11 @@ public class GameManager : MonoBehaviour {
 			PickablesLeft.ResetItems();
 			PickablesRight.ResetItems();
 		}
+	}
+
+	public void LoadLevel3()
+	{
+		LoadLevel(level3);
 	}
 
 	public void PerformAction(CharacterController character) {
@@ -137,7 +142,7 @@ public class GameManager : MonoBehaviour {
 
 			nextCell.SetItem(item);
 			
-			yield return null;
+			yield return new WaitForSeconds(0.033f);
 		}
 
 		onEnd();
