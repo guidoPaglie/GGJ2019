@@ -830,6 +830,7 @@ MonoBehaviour:
   - {fileID: 918326367}
   - {fileID: 860728655}
   - {fileID: 234270461}
+  - {fileID: 637352700}
   speed: 0.04
 --- !u!1 &545282471
 GameObject:
@@ -910,6 +911,12 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &637352700 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8783220158767426843, guid: 1d60d25d706dc4d628c2ff030119f283,
+    type: 3}
+  m_PrefabInstance: {fileID: 1440363108}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &649933107
 GameObject:
   m_ObjectHideFlags: 0
@@ -1132,7 +1139,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: "INSERT \nTITLE"
+  m_text: 'Bittersweet
+
+    Recall'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 116ac8165312547fea9fd19fc275e32f, type: 2}
   m_sharedMaterial: {fileID: 21475389599287332, guid: 116ac8165312547fea9fd19fc275e32f,
@@ -1161,8 +1170,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 7
-  m_fontSizeBase: 7
+  m_fontSize: 9
+  m_fontSizeBase: 9
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1202,9 +1211,9 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1066248450}
-    characterCount: 13
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 2
+    spaceCount: 1
     wordCount: 2
     linkCount: 0
     lineCount: 2
@@ -1289,7 +1298,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1066248449}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.0313873}
+  m_LocalPosition: {x: 0, y: 0, z: -2.031387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 918326368}
@@ -1297,7 +1306,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.41, y: 7.57}
+  m_AnchoredPosition: {x: 14.410034, y: 10.5}
   m_SizeDelta: {x: 25.14, y: 18.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1122012824
@@ -1805,7 +1814,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1794129811}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
