@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level1);
+		LoadLevel(level2);
 	}
 
 
