@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level3);
+		LoadLevel(level1);
 		
 		AudioManager.Instance.PlayMusic(AudioManager.MusicType.GAME);
 	}
