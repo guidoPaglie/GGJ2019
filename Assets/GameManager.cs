@@ -65,9 +65,12 @@ public class GameManager : MonoBehaviour {
 
 		dialogBoxLeft.Reset();
 		dialogBoxRight.Reset();
-		
-		if (_currentLevel != level1)
+
+		if (_currentLevel != level1) {
+			AudioManager.Instance.PauseMusic();
 			AudioManager.Instance.PlaySound("stage_clear");
+		}
+			
 	}
 
 	public void LoadLevel3()

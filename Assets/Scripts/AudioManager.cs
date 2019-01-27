@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
     private readonly Dictionary<string, AudioClip> AudioClipsByIds = new Dictionary<string, AudioClip>();
-    
+
+    public List<AudioSource> audioSources;
     public static AudioManager Instance;
 
     public AudioSource MusicAudioSource;
@@ -29,6 +31,10 @@ public class AudioManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         Instance = this;
+
+        for (int i = 0; i < 8; i++) {
+            audioSources.Add(gameObject.AddComponent<AudioSource>());
+        }
     }
 
     private void ConfigureFxs()
@@ -80,8 +86,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
-        FxAudioSource.clip = clip;
-        FxAudioSource.Play();
+        var audioSource = GetFreeAudioSource();
+        audioSource.clip = clip;
+        audioSource.Play();
+    }
+
+    AudioSource GetFreeAudioSource() {
+        return audioSources.First(audioSource => !audioSource.isPlaying);
     }
 
     public void PauseMusic()
