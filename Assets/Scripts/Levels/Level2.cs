@@ -45,8 +45,14 @@
 	}
 
 	public override void OnTriggerEvent(string item) {
-		switch (item) {
+		switch (item) 
+		{
+			case "door_left":
+				AudioManager.Instance.PlaySound("door_jammed");
+				break;
 			case "cookies_left":
+				AudioManager.Instance.PlaySound("pickup_item_2");
+				
 				cupboard_left.id = "cupboard_full_left";
 				cupboard_left_block.id = "cupboard_full_left";
 
@@ -54,6 +60,8 @@
 				cupboard_left_block.message = "cupboard_full_left";
 				break;
 			case "cupboard_full_left":
+				AudioManager.Instance.PlaySound("drop_item_3");
+
 				cupboard_left.id = "cupboard_left";
 				cupboard_left_block.id = "cupboard_left";
 
@@ -73,6 +81,8 @@
 								{
 									_gameManager.AnimateItemTo(rat, Direction.Right, 4, () =>
 									{
+										AudioManager.Instance.PlaySound("fall_hard");
+
 										GridManager.RemoveItemIn(rat.itemPosition.x, rat.itemPosition.y);
 										GridManager.RemoveItemIn(cupboard_right_1.itemPosition.x,
 											cupboard_right_1.itemPosition.y);
@@ -99,13 +109,20 @@
 			case "joystick_right":
 				hasJoystick = true;
 				_gameManager.HighlightItem("Joystick");
-				if (hasPhonebook) ringPhoneEvent();
+				if (hasPhonebook) 
+					ringPhoneEvent();
+				
 				break;
 			case "phonebook_right":
 				hasPhonebook = true;
-				if (hasJoystick) ringPhoneEvent();
+				if (hasJoystick) 
+					ringPhoneEvent();
+				
 				break;
 			case "phone_ring_left":
+				CancelInvoke("PlayPhoneRing");
+				AudioManager.Instance.PlaySound("mom_naggin");
+
 				phone_left.id = "phone_rang_left";
 				phone_left.message = "phone_ring_right";
 
@@ -114,14 +131,19 @@
 				phone_left.StopAnimation();
 				break;
 			case "door_right":
+
 				if (_gameManager.IsCharacterHoldingXYB()) 
 					_gameManager.LoadLevel3();
+				else
+					AudioManager.Instance.PlaySound("door_jammed");
 				break;
 		}
 	}
 
 	private void ringPhoneEvent()
 	{
+		InvokeRepeating("PlayPhoneRing", 1.5f, 2.0f);
+
 		phonebook.id = "phonebook_right_read";
 
 		phone_left.id = "phone_ring_left";
@@ -131,11 +153,10 @@
 				
 		phone_right.message = "phone_ring_right";
 	}
-	
-	
-	void Update(){
-		
+
+	private void PlayPhoneRing()
+	{
+		if (gameObject.activeSelf)
+			AudioManager.Instance.PlaySound("phone_ring_2");
 	}
-	
-	
 }

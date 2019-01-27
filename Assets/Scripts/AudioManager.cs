@@ -10,6 +10,8 @@ public class AudioManager : MonoBehaviour
     public AudioSource MusicAudioSource;
     public AudioClip IntroMusic;
     public AudioClip GameMusic;
+
+    public AudioSource StepsAudioSource;
     
     public AudioSource FxAudioSource;
     public List<AudioClip> FxAudioClips;
@@ -32,7 +34,7 @@ public class AudioManager : MonoBehaviour
     {
         FxAudioClips.ForEach(clip =>
         {
-            var id = clip.name.Replace("_SFX", "");
+            var id = clip.name.Replace("_SFX", "").ToLower();
             AudioClipsByIds.Add(id, clip);
         });
     }
@@ -40,6 +42,11 @@ public class AudioManager : MonoBehaviour
     public void PlaySound(string id)
     {
         Instance.Play(id);
+    }
+
+    public void PlaySteps()
+    {
+        StepsAudioSource.Play();
     }
 
     public void PlayMusic(bool isIntro)
@@ -52,7 +59,10 @@ public class AudioManager : MonoBehaviour
     {
         var clip = AudioClipsByIds[id];
         if (clip == null)
+        {
+            Debug.LogError("Audio with id " + id + " not found");
             return;
+        }
 
         FxAudioSource.clip = clip;
         FxAudioSource.Play();

@@ -75,6 +75,7 @@ public class Level1 : LevelController {
 				break;
 			case "ball_left":
 				_gameManager.AnimateItemTo(ballLeft, Direction.Up, 3, () => {
+					AudioManager.Instance.PlaySound("kick_ball");
 					GridManager.RemoveItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y);
 					potLeft.DestroyItem();
 					brokenPotLeft.gameObject.SetActive(true);
@@ -86,6 +87,9 @@ public class Level1 : LevelController {
 					ballLeft.message = "";
 					ballLeft.id = "";
 				});
+				break;
+			case "door1":
+				AudioManager.Instance.PlaySound("door_jammed");
 				break;
 		}
 	}
