@@ -44,6 +44,8 @@ public class GameManager : MonoBehaviour {
 
 
 	private void LoadLevel(LevelController level) {
+		AudioManager.Instance.PauseMusic();
+		
 		characterLeft.transform.position = level.initialCharacterLeftPosition;
 		characterRight.transform.position = level.initialCharacterRightPosition;
 
@@ -66,8 +68,7 @@ public class GameManager : MonoBehaviour {
 		dialogBoxLeft.Reset();
 		dialogBoxRight.Reset();
 
-		if (_currentLevel != level1) {
-			AudioManager.Instance.PauseMusic();
+		if (_currentLevel != level1) {			
 			AudioManager.Instance.PlaySound("stage_clear");
 		}
 			

@@ -40,6 +40,7 @@ public class Level1 : LevelController {
 		GridManager.InsertItemIn(memoryTrigger02);
 		GridManager.InsertItemIn(memoryTrigger03);
 		GridManager.InsertItemIn(memoryTrigger04);
+		AudioManager.Instance.OnResumeMusic();
 	}
 
 	private bool _leftSideEnabled = false;
