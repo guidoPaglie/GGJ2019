@@ -14,6 +14,11 @@ public class PickableItemView : MonoBehaviour
     
     private string currentItemId = "";
 
+    public void ResetItems()
+    {
+        ItemSpriteRenderer.enabled = false;
+    }
+
     private void Update()
     {
         if (!String.IsNullOrEmpty(Character.pickedItemId) &&
@@ -25,6 +30,7 @@ public class PickableItemView : MonoBehaviour
                 return;
 
             ItemSpriteRenderer.sprite = GetSpriteById();
+            ItemSpriteRenderer.enabled = true;
         }
     }
 

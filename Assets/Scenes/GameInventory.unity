@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 56260700}
   - component: {fileID: 56260702}
   m_Layer: 0
-  m_Name: ItemLeft
+  m_Name: PickablesLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d44e651a17ff435ab62d0e570a51dd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ebc1dbce991de4c5a932bae7b0eac4e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -175,7 +175,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &56260701
@@ -186,7 +186,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 56260699}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.65, y: 14.66, z: 0}
+  m_LocalPosition: {x: 7.54, y: 14.66, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 867846560}
@@ -498,7 +498,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8686fb60199b34dd38030712f5d499b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6d44e651a17ff435ab62d0e570a51dd9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 856430630}
   - component: {fileID: 856430632}
   m_Layer: 0
-  m_Name: ItemRight
+  m_Name: PickablesRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -564,7 +564,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6d44e651a17ff435ab62d0e570a51dd9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c26c1495950440beaa667553f0bac96, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -572,7 +572,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &856430631
@@ -583,7 +583,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 856430629}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.6, y: 14.66, z: 0}
+  m_LocalPosition: {x: 21.39, y: 14.66, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 867846560}
@@ -1212,6 +1212,8 @@ MonoBehaviour:
   level1: {fileID: 4131112080533753201}
   level2: {fileID: 3976011398835744528}
   level3: {fileID: 1015245603}
+  PickablesLeft: {fileID: 56260702}
+  PickablesRight: {fileID: 856430632}
 --- !u!1 &2058982751
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,6 +17,9 @@ public class GameManager : MonoBehaviour {
 	public LevelController level3;
 	private LevelController _currentLevel;
 
+	public PickableItemView PickablesLeft;
+	public PickableItemView PickablesRight;
+	
 	private Dictionary<string, Dictionary<string, string>> dialogs =
 		new Dictionary<string, Dictionary<string, string>>();
 
@@ -47,6 +50,8 @@ public class GameManager : MonoBehaviour {
 		GridManager.UpdateGridFrom(cellpositionsList);
 
 		_currentLevel.Init();
+		PickablesLeft.ResetItems();
+		PickablesRight.ResetItems();
 	}
 
 	public void PerformAction(CharacterController character) {
