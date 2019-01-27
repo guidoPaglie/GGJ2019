@@ -84,7 +84,7 @@ namespace Levels
 
                         _car1Activated = false;
                         _gameManager.AnimateItemTo(car1_left, Direction.Down, 4, () => { });
-                    });
+                    });                    
                     break;
                 case "car2_left":
                     _car2Activated = true;
