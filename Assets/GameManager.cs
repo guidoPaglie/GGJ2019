@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
 
 	// Start is called before the first frame update
 	void Start() {
+		dialogBoxLeft.gameObject.SetActive(false);
+		dialogBoxRight.gameObject.SetActive(false);
 		var textAsset = Resources.Load<TextAsset>("dialogs");
 		dialogs = JsonConvert.DeserializeObject<Dictionary<string, Dictionary<string, string>>>(textAsset.text);
 
@@ -93,6 +95,7 @@ public class GameManager : MonoBehaviour {
 		else currentDialogBox = dialogBoxRight;
 
 		if (!string.IsNullOrEmpty(item.message)) {
+			currentDialogBox.gameObject.SetActive(true);
 			currentDialogBox.ShowMessage(dialogs[_currentLevel.levelName][item.message]);
 		}
 	}
