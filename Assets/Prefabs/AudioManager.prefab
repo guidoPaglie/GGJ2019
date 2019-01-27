@@ -427,6 +427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66c3b7040d709456a8ca3262d14a9545, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSources: []
   MusicAudioSource: {fileID: 7026946020118910492}
   IntroMusic: {fileID: 8300000, guid: 1797dd417bf4f483ea576cf9a1587969, type: 3}
   GameMusic: {fileID: 8300000, guid: 3733d14351d404a598c0239bd770a54c, type: 3}
@@ -449,3 +450,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2bcbaeacf2b114d3e91ef6e51f7a5241, type: 3}
   - {fileID: 8300000, guid: 5855cd84f83ed4cca93c83357abd4bd0, type: 3}
   - {fileID: 8300000, guid: 494dab350f17a478f9db97ac62f45b08, type: 3}
+  - {fileID: 8300000, guid: 381ef99e1b4d54585b56f60665a14864, type: 3}
