@@ -20,6 +20,8 @@ namespace Levels
         public Item tv_right;
         public Item key_right;
 
+        public Item console_right;
+        
         public Item LibraryLeftBlock;
         public Item LibraryRightBlock;
         
@@ -42,6 +44,9 @@ namespace Levels
             GridManager.InsertItemIn(car2_right);
             GridManager.InsertItemIn(library_right);
             GridManager.InsertItemIn(tv_right);
+            
+            GridManager.InsertItemIn(key_right);
+            GridManager.InsertItemIn(console_right);
         }
 
         public override void OnTriggerEvent(string item)
@@ -71,6 +76,28 @@ namespace Levels
                         _car2Activated = false;
                         _gameManager.AnimateItemTo(car2_left, Direction.Left, 2, () => { });
                     });
+                    break;
+                case "key_left":
+                    drawer_left.id = "drawer_left_key";
+                    break;
+                case "drawer_left_key":
+                    drawer_left.id = "drawer_left";
+                    drawer_right.id = "drawer_right_key";
+                    _gameManager.ItemDepositLeft(item);
+                    break;
+                case "drawer_right_key":
+                    var cell = GridManager.GetCell(new Vector2(key_right.itemPosition.x, key_right.itemPosition.y));
+                    _gameManager.PerformPick(cell, _gameManager.characterRight);
+                    chest_right.id = "chest_right_key";
+                    break;
+                
+                case "chest_right_key":
+                    _gameManager.ItemDepositRight(item);
+                    chest_right.id = "chest_right";
+                    var console = GridManager.GetCell(new Vector2(console_right.itemPosition.x, console_right.itemPosition.y));
+                    _gameManager.PerformPick(console, _gameManager.characterRight);
+                    _gameManager.HighlightItem("Consola");
+
                     break;
             }
         }

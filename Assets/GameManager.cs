@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level3);
+		LoadLevel(level1);
 	}
 
 
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour {
 		}
 	}
 
-	private void PerformPick(Cell cell, CharacterController character) {
+	public void PerformPick(Cell cell, CharacterController character) {
 		if (cell.GetItem().isPickable) {
 			var id = cell.GetItem().id;
 			character.pickedItemId = id;
@@ -151,12 +151,21 @@ public class GameManager : MonoBehaviour {
 		onEnd();
 	}
 
-	public void ItemDeposit(string item)
+	public void ItemDepositLeft(string item)
 	{
-		if (item == "cupboard_full_left")
+		if (item == "cupboard_full_left" || item == "drawer_left_key" || item == "chest_right_key")
 		{
 			characterLeft.pickedItemId = "";
 			PickablesLeft.ResetItems();
+		}
+	}
+	
+	public void ItemDepositRight(string item)
+	{
+		if (item == "cupboard_full_left" || item == "drawer_left_key" || item == "chest_right_key")
+		{
+			characterRight.pickedItemId = "";
+			PickablesRight.ResetItems();
 		}
 	}
 }
