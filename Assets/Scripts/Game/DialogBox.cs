@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,7 @@ public class DialogBox : MonoBehaviour {
     
     public void ShowMessage(string message) {
         StopAllCoroutines();
+        dialogEnableTime = Math.Max(message.Length * 0.1f, 4.0f);
         animator.SetTrigger("In");
         _timer = 0;
         text.text = "";
@@ -19,7 +21,7 @@ public class DialogBox : MonoBehaviour {
     }
 
     private IEnumerator ShowLetters(string message) {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.33f);
                 
         foreach (var letter in message) {
             text.text += letter;
