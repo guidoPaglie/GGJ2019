@@ -21,7 +21,7 @@ public class IntroManager : MonoBehaviour
         "I haven't been there in years."
     };
 
-    private void Awake()
+    private void Start()
     {
         AudioManager.Instance.PlayMusic(AudioManager.MusicType.INTRO);
     }
