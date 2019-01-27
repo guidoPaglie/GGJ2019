@@ -50,6 +50,7 @@ public class Level1 : LevelController {
 			case "cartridge_right":
 				ballRight.id = "ball_right";
 				ballRight.message = "ball_callback_right";
+				_gameManager.HighlightItem("Cartucho");
 				break;
 			case "ball_right":
 				ballLeft.gameObject.SetActive(true);

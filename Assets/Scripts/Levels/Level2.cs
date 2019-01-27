@@ -93,6 +93,7 @@
 				break;
 			case "joystick_right":
 				hasJoystick = true;
+				_gameManager.HighlightItem("Joystick");
 				if (hasPhonebook) ringPhoneEvent();
 				break;
 			case "phonebook_right":

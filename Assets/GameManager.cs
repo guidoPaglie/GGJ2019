@@ -6,6 +6,8 @@ using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+	public ItemHighlight ItemHighlight;
+	
 	public CharacterController characterLeft;
 	public CharacterController characterRight;
 
@@ -114,6 +116,10 @@ public class GameManager : MonoBehaviour {
 
 	public bool IsCharacterHoldingXYB() {
 		return characterLeft.IsHoldingXYB() || characterRight.IsHoldingXYB();
+	}
+
+	public void HighlightItem(string itemResourcesName) {
+		ItemHighlight.HighlightItem(itemResourcesName);
 	}
 	
 	private IEnumerator AnimateItem(Item item, Direction direction, int tilesQty, Action onEnd) {
