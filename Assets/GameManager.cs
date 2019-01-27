@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Levels;
 using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
@@ -21,6 +22,8 @@ public class GameManager : MonoBehaviour {
 
 	public PickableItemView PickablesLeft;
 	public PickableItemView PickablesRight;
+
+	public Inventory Inventory;
 	
 	private Dictionary<string, Dictionary<string, string>> dialogs =
 		new Dictionary<string, Dictionary<string, string>>();
@@ -32,7 +35,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level1);
+		LoadLevel(level3);
 	}
 
 
@@ -170,5 +173,10 @@ public class GameManager : MonoBehaviour {
 			characterRight.pickedItemId = "";
 			PickablesRight.ResetItems();
 		}
+	}
+
+	public void HideInventory()
+	{
+		Inventory.Hide();
 	}
 }

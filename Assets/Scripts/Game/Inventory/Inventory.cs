@@ -14,7 +14,7 @@ namespace Levels
 
         private void Awake()
         {
-            ItemsLevelsSR.ForEach(sr => sr.enabled = false);
+            HideItems();
         }
 
         private void Update()
@@ -40,6 +40,16 @@ namespace Levels
             return itemId.Equals("cartridge_right") || 
                    itemId.Equals("joystick_right") || 
                    itemId.Equals("console_right");
+        }
+
+        public void Hide()
+        {
+            HideItems();
+        }
+
+        private void HideItems()
+        {
+            ItemsLevelsSR.ForEach(sr => sr.enabled = false);
         }
     }
 }

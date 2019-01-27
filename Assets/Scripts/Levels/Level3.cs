@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Levels
@@ -21,14 +22,19 @@ namespace Levels
         public Item key_right;
 
         public Item console_right;
-        
+
         public Item LibraryLeftBlock;
         public Item LibraryRightBlock;
-        
+
+        public Item TvBlockLeft;
+        public Item TvBlockRight;
+
+        public List<Item> floors;
+
         private bool _car1Activated;
         private bool _car2Activated;
         private bool _alreadyDropped;
-        
+
         protected override void OnStart()
         {
             GridManager.InsertItemIn(chest_left);
@@ -44,9 +50,14 @@ namespace Levels
             GridManager.InsertItemIn(car2_right);
             GridManager.InsertItemIn(library_right);
             GridManager.InsertItemIn(tv_right);
-            
+
             GridManager.InsertItemIn(key_right);
             GridManager.InsertItemIn(console_right);
+
+            GridManager.InsertItemIn(TvBlockLeft);
+            GridManager.InsertItemIn(TvBlockRight);
+            
+            floors.ForEach(GridManager.InsertItemIn);
         }
 
         public override void OnTriggerEvent(string item)
@@ -61,6 +72,7 @@ namespace Levels
                         {
                             DropKey();
                         }
+
                         _car1Activated = false;
                         _gameManager.AnimateItemTo(car1_left, Direction.Down, 4, () => { });
                     });
@@ -73,6 +85,7 @@ namespace Levels
                         {
                             DropKey();
                         }
+
                         _car2Activated = false;
                         _gameManager.AnimateItemTo(car2_left, Direction.Left, 2, () => { });
                     });
@@ -90,13 +103,43 @@ namespace Levels
                     _gameManager.PerformPick(cell, _gameManager.characterRight);
                     chest_right.id = "chest_right_key";
                     break;
-                
+
                 case "chest_right_key":
                     _gameManager.ItemDepositRight(item);
                     chest_right.id = "chest_right";
-                    var console = GridManager.GetCell(new Vector2(console_right.itemPosition.x, console_right.itemPosition.y));
+                    var console =
+                        GridManager.GetCell(new Vector2(console_right.itemPosition.x, console_right.itemPosition.y));
                     _gameManager.PerformPick(console, _gameManager.characterRight);
                     _gameManager.HighlightItem("Consola");
+
+                    tv_left.message = "tv_ready_left";
+                    TvBlockLeft.message = "tv_ready_left";
+
+                    tv_right.message = "tv_ready_right";
+                    tv_right.id = "tv_ready_right";
+                    TvBlockRight.message = "tv_ready_right";
+                    TvBlockRight.id = "tv_ready_right";
+                    break;
+
+                case "tv_ready_right":
+                    _gameManager.HideInventory();
+                    _gameManager.characterRight.enabled = false;
+
+                    tv_right.message = null;
+                    tv_right.id = "tv_ready_right_2";
+                    TvBlockRight.message = null;
+                    TvBlockRight.id = "tv_ready_right_2";
+
+
+                    floors.ForEach(f =>
+                    {
+                        f.GetComponent<SpriteRenderer>().enabled = true;
+                        f.isWalkable = true;
+                    });
+                    break;
+
+                case "tv_ready_right_2":
+                    _gameManager.characterLeft.enabled = false;
 
                     break;
             }
@@ -106,7 +149,7 @@ namespace Levels
         {
             if (_alreadyDropped)
                 return;
-            
+
             _alreadyDropped = true;
             GridManager.RemoveItemIn(key_left.itemPosition.x, key_left.itemPosition.y);
             key_left.SetPosition(new Vector2(key_left.itemPosition.x, key_left.itemPosition.y - 2));
