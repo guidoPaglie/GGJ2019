@@ -25,7 +25,8 @@ namespace Levels
         
         private bool _car1Activated;
         private bool _car2Activated;
-
+        private bool _alreadyDropped;
+        
         protected override void OnStart()
         {
             GridManager.InsertItemIn(chest_left);
@@ -76,8 +77,12 @@ namespace Levels
 
         private void DropKey()
         {
+            if (_alreadyDropped)
+                return;
+            
+            _alreadyDropped = true;
             GridManager.RemoveItemIn(key_left.itemPosition.x, key_left.itemPosition.y);
-            key_left.SetPosition(new Vector2(key_left.itemPosition.x, key_left.itemPosition.y - 1));
+            key_left.SetPosition(new Vector2(key_left.itemPosition.x, key_left.itemPosition.y - 2));
             GridManager.InsertItemIn(key_left);
         }
     }
