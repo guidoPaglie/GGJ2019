@@ -2424,7 +2424,9 @@ MonoBehaviour:
   levelName: level2
   initialCharacterLeftPosition: {x: 6, y: 3}
   initialCharacterRightPosition: {x: 20, y: 3}
-  dialogs: []
+  dialogs:
+  - {fileID: 3240933690866856818}
+  - {fileID: 8780675858225350203}
   LevelIntro: {fileID: 1693665726524693760}
   rat: {fileID: 1301809733}
   phonebook: {fileID: 428092030}
@@ -2597,16 +2599,6 @@ PrefabInstance:
       propertyPath: Animator
       value: 
       objectReference: {fileID: 2416587927140145417}
-    - target: {fileID: 854807230185137447, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1,
-        type: 3}
-      propertyPath: m_textInfo.textComponent
-      value: 
-      objectReference: {fileID: 3855124785713305143}
-    - target: {fileID: 854807230185137447, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1,
-        type: 3}
-      propertyPath: m_renderer
-      value: 
-      objectReference: {fileID: 7334436220891536905}
     - target: {fileID: 5137771142584217010, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2662,6 +2654,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 854807230185137447, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1,
+        type: 3}
+      propertyPath: m_textInfo.textComponent
+      value: 
+      objectReference: {fileID: 3855124785713305143}
+    - target: {fileID: 854807230185137447, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1,
+        type: 3}
+      propertyPath: m_renderer
+      value: 
+      objectReference: {fileID: 7334436220891536905}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: deb65a4ca19ac4f7a9e4693ce65a5cc1, type: 3}
 --- !u!1 &414079132027401148 stripped

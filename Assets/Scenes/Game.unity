@@ -206,7 +206,29 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
       propertyPath: m_hasFontAssetChanged
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 21134198299845868, guid: 91702aef08aff4cdeb6d078981f9f4e2,
+        type: 2}
+    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1213740626, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 21134198299845868, guid: 91702aef08aff4cdeb6d078981f9f4e2,
+        type: 2}
+    - target: {fileID: 1213740625, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
+      propertyPath: m_Mesh
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
@@ -788,11 +810,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level2
       objectReference: {fileID: 0}
-    - target: {fileID: 3976011398835744527, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3915165096242628931, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1174,6 +1191,11 @@ PrefabInstance:
     - target: {fileID: 1946710929976056171, guid: 73ac7359e2daa4e87b16adf3272823d1,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1946710930372780141, guid: 73ac7359e2daa4e87b16adf3272823d1,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
