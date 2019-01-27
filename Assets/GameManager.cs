@@ -55,6 +55,9 @@ public class GameManager : MonoBehaviour {
 		
 		PickablesLeft.ResetItems();
 		PickablesRight.ResetItems();
+
+		dialogBoxLeft.Reset();
+		dialogBoxRight.Reset();
 	}
 
 	public void LoadLevel3()

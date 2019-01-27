@@ -49,4 +49,9 @@ public class DialogBox : MonoBehaviour {
     private void HideDialog() {
         animator.SetTrigger("Out");    
     }
+
+    public void Reset()
+    {
+        HideDialog();
+    }
 }
