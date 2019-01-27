@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Levels
 {
@@ -180,6 +181,11 @@ namespace Levels
         {
             endingAnimator.gameObject.SetActive(true);
             endingAnimator.SetTrigger("Play");
+            Invoke("ChangeToCredits", 9);
+        }
+
+        void ChangeToCredits() {
+            SceneManager.LoadScene(2);
         }
 
         private void DropKey()
