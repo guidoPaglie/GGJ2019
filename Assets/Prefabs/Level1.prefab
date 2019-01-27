@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5213248164494bb1702104df147bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: door1
+  id: door_right
   itemPosition: {fileID: 182178761}
   isPickable: 0
   isWalkable: 0
@@ -684,7 +684,7 @@ MonoBehaviour:
   itemPosition: {fileID: 487171754}
   isPickable: 0
   isWalkable: 1
-  message: pot_left
+  message: memory_trigger
   isDoor: 0
   isTrigger: 1
   Animator: {fileID: 0}
@@ -1059,7 +1059,7 @@ MonoBehaviour:
   itemPosition: {fileID: 1216463654}
   isPickable: 0
   isWalkable: 1
-  message: pot_left
+  message: memory_trigger
   isDoor: 0
   isTrigger: 1
   Animator: {fileID: 0}
@@ -1289,7 +1289,7 @@ MonoBehaviour:
   itemPosition: {fileID: 1653736076}
   isPickable: 0
   isWalkable: 1
-  message: pot_left
+  message: memory_trigger
   isDoor: 0
   isTrigger: 1
   Animator: {fileID: 0}
@@ -1959,7 +1959,7 @@ MonoBehaviour:
   itemPosition: {fileID: 283723298536681573}
   isPickable: 0
   isWalkable: 1
-  message: pot_left
+  message: memory_trigger
   isDoor: 0
   isTrigger: 1
   Animator: {fileID: 0}
@@ -2252,7 +2252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d5213248164494bb1702104df147bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  id: door1
+  id: door_left
   itemPosition: {fileID: 6644478102510539178}
   isPickable: 0
   isWalkable: 0

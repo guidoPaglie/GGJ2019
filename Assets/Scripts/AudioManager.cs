@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -41,7 +42,7 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySound(string id)
     {
-        Instance.Play(id);
+        Instance.Play(id.ToLower());
     }
 
     public void PlaySteps()
@@ -49,10 +50,25 @@ public class AudioManager : MonoBehaviour
         StepsAudioSource.Play();
     }
 
-    public void PlayMusic(bool isIntro)
+    public void PlayMusic(MusicType type)
     {
-        MusicAudioSource.clip = isIntro ? IntroMusic : GameMusic;
+        switch (type)
+        {
+            case MusicType.INTRO:
+                MusicAudioSource.clip = IntroMusic;
+                break;
+            case MusicType.GAME:
+                MusicAudioSource.clip = GameMusic;
+                break;
+        }
+        
         MusicAudioSource.Play();
+    }
+
+    public enum MusicType
+    {
+        INTRO,
+        GAME
     }
 
     private void Play(string id)
