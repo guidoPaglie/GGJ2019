@@ -46,6 +46,7 @@ namespace Levels
 
         protected override void OnStart()
         {
+            base.OnStart();
             _gameManager.characterLeft.enabled = false;
             _gameManager.characterRight.enabled = false;
             LevelIntro.gameObject.SetActive(true);
