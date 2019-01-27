@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour {
 
 		characterLeft.SetGameManager(this);
 		characterRight.SetGameManager(this);
-		LoadLevel(level2);
+		LoadLevel(level1);
 	}
 
 
@@ -101,6 +101,10 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(AnimateItem(item, direction, tilesQty, onEnd));
 	}
 
+	public bool IsCharacterHoldingXYB() {
+		return characterLeft.IsHoldingXYB() || characterRight.IsHoldingXYB();
+	}
+	
 	private IEnumerator AnimateItem(Item item, Direction direction, int tilesQty, Action onEnd) {
 		for (int i = 0; i < tilesQty; i++) {
 			var cell = GridManager.GetCell(new Vector2(item.itemPosition.x, item.itemPosition.y));
