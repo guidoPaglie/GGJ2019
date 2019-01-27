@@ -31,6 +31,11 @@ namespace Levels
 
         public List<Item> floors;
 
+        public GameObject tvNoise;
+        public GameObject tvSoccer;
+
+        public Animator endingAnimator;
+        
         private bool _car1Activated;
         private bool _car2Activated;
         private bool _alreadyDropped;
@@ -42,6 +47,7 @@ namespace Levels
             GridManager.InsertItemIn(car1_left);
             GridManager.InsertItemIn(car2_left);
             GridManager.InsertItemIn(library_left);
+            GridManager.InsertItemIn(LibraryLeftBlock);
             GridManager.InsertItemIn(tv_left);
 
             GridManager.InsertItemIn(chest_right);
@@ -49,6 +55,7 @@ namespace Levels
             GridManager.InsertItemIn(car1_right);
             GridManager.InsertItemIn(car2_right);
             GridManager.InsertItemIn(library_right);
+            GridManager.InsertItemIn(LibraryRightBlock);
             GridManager.InsertItemIn(tv_right);
 
             GridManager.InsertItemIn(key_right);
@@ -120,6 +127,11 @@ namespace Levels
                     TvBlockRight.message = "tv_ready_right";
                     TvBlockRight.id = "tv_ready_right";
                     break;
+                
+                case "tv_right":
+                    tvNoise.SetActive(true);
+                    Invoke("turnOffNoise", 3);
+                    break;
 
                 case "tv_ready_right":
                     _gameManager.HideInventory();
@@ -130,6 +142,7 @@ namespace Levels
                     TvBlockRight.message = null;
                     TvBlockRight.id = "tv_ready_right_2";
 
+                    tvSoccer.SetActive(true);
 
                     floors.ForEach(f =>
                     {
@@ -139,10 +152,23 @@ namespace Levels
                     break;
 
                 case "tv_ready_right_2":
+                    tv_right.id = "";
+                    TvBlockRight.id = "";
                     _gameManager.characterLeft.enabled = false;
-
+                    Debug.Log("Ending");
+                    Invoke("startEndingAnimation", 2);
                     break;
             }
+        }
+
+        private void turnOffNoise()
+        {
+            tvNoise.SetActive(false);
+        }
+
+        private void startEndingAnimation()
+        {
+            endingAnimator.SetTrigger("Play");
         }
 
         private void DropKey()
