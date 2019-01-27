@@ -136,6 +136,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035e5d5af2a9644f381aa5f9b56b23c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &319502129 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 319502129, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1778219467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d5213248164494bb1702104df147bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &499680315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,6 +345,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &869702428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 869702428, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
+    type: 3}
+  m_PrefabInstance: {fileID: 1778219467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61d5213248164494bb1702104df147bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1015245602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -613,6 +637,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3976011398835744528, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
+        type: 3}
+      propertyPath: door_left
+      value: 
+      objectReference: {fileID: 319502129}
+    - target: {fileID: 3976011398835744528, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
+        type: 3}
+      propertyPath: door_right
+      value: 
+      objectReference: {fileID: 869702428}
     - target: {fileID: 319502125, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba, type: 3}
       propertyPath: m_Name
       value: DoorLeft
@@ -855,6 +889,8 @@ MonoBehaviour:
   level1: {fileID: 4131112080533753201}
   level2: {fileID: 3976011398835744528}
   level3: {fileID: 1015245603}
+  PickablesLeft: {fileID: 0}
+  PickablesRight: {fileID: 0}
 --- !u!114 &1482430471533249317 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1482430471533249317, guid: 16acfd027789d41259dff5119cd5fe9c,
