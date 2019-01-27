@@ -25,7 +25,7 @@ namespace Intro
                 _pressedStart = true;
                 PlayerImage.sprite = PlayerEndSprite;
                 PlayerText.SetActive(false);
-                
+
                 if (Controller == XboxController.First)
                 {
                     IntroManager.playerOneIsPlaying = true;
