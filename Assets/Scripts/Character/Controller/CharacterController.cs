@@ -27,6 +27,9 @@ public class CharacterController : UnityXboxController {
 		Debug.Log("A Pressed");
 		_gameManager.PerformAction(this);
 	}
+	
+	
+	
 	protected override void OnLeftStickLeft() {
 		Debug.Log("Left Pressed");
 		MoveCharacter(Direction.Left);

@@ -1,4 +1,5 @@
-﻿using UnityEngine.Serialization;
+﻿using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Level1 : LevelController {
 	public Item cartridgeTrigger1;
@@ -31,6 +32,10 @@ public class Level1 : LevelController {
 		GridManager.InsertItemIn(ballRight.itemPosition.x, ballRight.itemPosition.y, ballRight);		
 	}
 
+	void Update() {
+		Debug.Log(_gameManager.IsCharacterHoldingXYB());
+	}
+	
 	public override void OnTriggerEvent(string itemId) {
 		switch (itemId) {
 			case "cartridge_trigger":

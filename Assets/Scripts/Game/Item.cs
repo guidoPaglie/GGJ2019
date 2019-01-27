@@ -9,6 +9,7 @@ public class Item : MonoBehaviour {
 	public string message;
 	public bool isDoor;
 	public bool isTrigger;
+	public Animator Animator;
 
 	void Update() {
 		if (itemPosition != null)
@@ -16,11 +17,23 @@ public class Item : MonoBehaviour {
 	}
 
 	public void DestroyItem() {
-		Destroy(this.gameObject);
+		Destroy(gameObject);
 	}
 
 	public void SetPosition(Vector2 position) {
 		itemPosition.x = (int) position.x;
 		itemPosition.y = (int) position.y;
+	}
+
+	public void Animate() {
+		if (Animator == null) return;
+		Animator.enabled = true;
+		Animator.SetTrigger("Play");
+	}
+
+	public void StopAnimation() {
+		if (Animator != null) {
+			Animator.enabled = false;
+		}
 	}
 }

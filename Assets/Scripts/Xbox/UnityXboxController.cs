@@ -12,8 +12,7 @@ public class UnityXboxController : MonoBehaviour {
 			OnAPressed();
 		}
 
-		if (!_directionInputBlocked)
-		{
+		if (!_directionInputBlocked) {
 			if (LeftButtonPressed()) {
 				OnLeftStickLeft();
 				_directionInputBlocked = true;
@@ -42,8 +41,14 @@ public class UnityXboxController : MonoBehaviour {
 		}
 	}
 
-	private bool InteractButtonPressed()
-	{
+	public bool IsHoldingXYB() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.X : KeyCode.M;
+		return Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.B) && Input.GetKey(KeyCode.Y) ||
+		       XCI.GetButtonDown(XboxButton.X, controller) && XCI.GetButtonDown(XboxButton.B, controller) &&
+		       XCI.GetButtonDown(XboxButton.Y, controller);
+	}
+
+	private bool InteractButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.E : KeyCode.M;
 		return Input.GetKeyDown(keyboardKey) || XCI.GetButtonDown(XboxButton.A, controller);
 	}
@@ -52,28 +57,26 @@ public class UnityXboxController : MonoBehaviour {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.A : KeyCode.LeftArrow;
 		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1;
 	}
-	
+
 	protected virtual bool RightButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.D : KeyCode.RightArrow;
 		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1;
 	}
-	
+
 	protected virtual bool UpButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.W : KeyCode.UpArrow;
 		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1;
 	}
-	
+
 	protected virtual bool DownButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.S : KeyCode.DownArrow;
 		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1;
 	}
 
 	protected virtual void OnLeftStickDown() {
-		
 	}
 
 	protected virtual void OnLeftStickUp() {
-		
 	}
 
 	protected virtual void OnLeftStickRight() {
@@ -83,6 +86,5 @@ public class UnityXboxController : MonoBehaviour {
 	}
 
 	protected virtual void OnAPressed() {
-		
 	}
 }
