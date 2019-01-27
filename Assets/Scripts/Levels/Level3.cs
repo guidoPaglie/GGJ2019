@@ -8,6 +8,7 @@ namespace Levels
 {
     public class Level3 : LevelController
     {
+        public LevelIntro LevelIntro;
         public Item chest_left;
         public Item drawer_left;
         public Item car1_left;
@@ -45,29 +46,36 @@ namespace Levels
 
         protected override void OnStart()
         {
-            GridManager.InsertItemIn(chest_left);
-            GridManager.InsertItemIn(drawer_left);
-            GridManager.InsertItemIn(car1_left);
-            GridManager.InsertItemIn(car2_left);
-            GridManager.InsertItemIn(library_left);
-            GridManager.InsertItemIn(LibraryLeftBlock);
-            GridManager.InsertItemIn(tv_left);
+            _gameManager.characterLeft.enabled = false;
+            _gameManager.characterRight.enabled = false;
+            LevelIntro.gameObject.SetActive(true);
+            LevelIntro.StartIntro("Y llegue al cuarto donde me tocaba...   hacer la tarea", () => {
+                _gameManager.characterLeft.enabled = true;
+                _gameManager.characterRight.enabled = true;
+                GridManager.InsertItemIn(chest_left);
+                GridManager.InsertItemIn(drawer_left);
+                GridManager.InsertItemIn(car1_left);
+                GridManager.InsertItemIn(car2_left);
+                GridManager.InsertItemIn(library_left);
+                GridManager.InsertItemIn(LibraryLeftBlock);
+                GridManager.InsertItemIn(tv_left);
 
-            GridManager.InsertItemIn(chest_right);
-            GridManager.InsertItemIn(drawer_right);
-            GridManager.InsertItemIn(car1_right);
-            GridManager.InsertItemIn(car2_right);
-            GridManager.InsertItemIn(library_right);
-            GridManager.InsertItemIn(LibraryRightBlock);
-            GridManager.InsertItemIn(tv_right);
+                GridManager.InsertItemIn(chest_right);
+                GridManager.InsertItemIn(drawer_right);
+                GridManager.InsertItemIn(car1_right);
+                GridManager.InsertItemIn(car2_right);
+                GridManager.InsertItemIn(library_right);
+                GridManager.InsertItemIn(LibraryRightBlock);
+                GridManager.InsertItemIn(tv_right);
 
-            GridManager.InsertItemIn(key_right);
-            GridManager.InsertItemIn(console_right);
+                GridManager.InsertItemIn(key_right);
+                GridManager.InsertItemIn(console_right);
 
-            GridManager.InsertItemIn(TvBlockLeft);
-            GridManager.InsertItemIn(TvBlockRight);
+                GridManager.InsertItemIn(TvBlockLeft);
+                GridManager.InsertItemIn(TvBlockRight);
             
-            floors.ForEach(GridManager.InsertItemIn);
+                floors.ForEach(GridManager.InsertItemIn);
+            });           
         }
 
         public override void OnTriggerEvent(string item)

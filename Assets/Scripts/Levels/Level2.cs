@@ -1,5 +1,5 @@
-﻿public class Level2 : LevelController
-{
+﻿public class Level2 : LevelController {
+	public LevelIntro LevelIntro;
 	public Item rat;
 	public Item phonebook;
 	public Item cookies;
@@ -22,19 +22,26 @@
 	private bool hasPhonebook;
 
 	protected override void OnStart() {
-		GridManager.InsertItemIn(rat);
-		GridManager.InsertItemIn(cupboard_left);
-		GridManager.InsertItemIn(cupboard_left_block);
-		GridManager.InsertItemIn(cupboard_right_1);
-		GridManager.InsertItemIn(cupboard_right_2);
-		GridManager.InsertItemIn(cupboard_right_3);
-		GridManager.InsertItemIn(cupboard_right_4);
-		GridManager.InsertItemIn(cookies);
-		GridManager.InsertItemIn(note);
-		GridManager.InsertItemIn(phone_right);
-		GridManager.InsertItemIn(phone_left);
-		GridManager.InsertItemIn(door_left);
-		GridManager.InsertItemIn(door_right);
+		_gameManager.characterLeft.enabled = false;
+		_gameManager.characterRight.enabled = false;
+		LevelIntro.gameObject.SetActive(true);
+		LevelIntro.StartIntro("Y Aca estaba todo copado hasta que una llamada llego...", () => {
+			_gameManager.characterLeft.enabled = true;
+			_gameManager.characterRight.enabled = true;
+			GridManager.InsertItemIn(rat);
+			GridManager.InsertItemIn(cupboard_left);
+			GridManager.InsertItemIn(cupboard_left_block);
+			GridManager.InsertItemIn(cupboard_right_1);
+			GridManager.InsertItemIn(cupboard_right_2);
+			GridManager.InsertItemIn(cupboard_right_3);
+			GridManager.InsertItemIn(cupboard_right_4);
+			GridManager.InsertItemIn(cookies);
+			GridManager.InsertItemIn(note);
+			GridManager.InsertItemIn(phone_right);
+			GridManager.InsertItemIn(phone_left);
+			GridManager.InsertItemIn(door_left);
+			GridManager.InsertItemIn(door_right);	
+		});
 	}
 
 	public override void OnTriggerEvent(string item) {
