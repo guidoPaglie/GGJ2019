@@ -25,7 +25,7 @@
 		_gameManager.characterLeft.enabled = false;
 		_gameManager.characterRight.enabled = false;
 		LevelIntro.gameObject.SetActive(true);
-		LevelIntro.StartIntro("Y Aca estaba todo copado hasta que una llamada llego...", () => {
+		LevelIntro.StartIntro("My father and my mother worked all day long. \nI spent a lot of time alone after school.", () => {
 			_gameManager.characterLeft.enabled = true;
 			_gameManager.characterRight.enabled = true;
 			GridManager.InsertItemIn(rat);
