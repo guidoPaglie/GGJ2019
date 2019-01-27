@@ -137,6 +137,7 @@ namespace Levels
                     tv_right.id = "tv_ready_right";
                     TvBlockRight.message = "tv_ready_right";
                     TvBlockRight.id = "tv_ready_right";
+                    
                     break;
                 
                 case "tv_right":
@@ -200,6 +201,8 @@ namespace Levels
         {
             if (_alreadyDropped)
                 return;
+
+            AudioManager.Instance.PlaySound("key_drop");
 
             _alreadyDropped = true;
             GridManager.RemoveItemIn(key_left.itemPosition.x, key_left.itemPosition.y);

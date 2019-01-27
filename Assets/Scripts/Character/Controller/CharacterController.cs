@@ -95,10 +95,16 @@ public class CharacterController : UnityXboxController {
 		var transform1 = transform;
 		var position = transform1.position;
 
-		if (_gameManager.CanMoveTo(NextMovement(direction))) {
+		if (_gameManager.CanMoveTo(NextMovement(direction))) 
+		{
 			position = NextMovement(direction);
 			_gameManager.MoveCharacter(this, position);
-		}		
+			AudioManager.Instance.PlaySteps();
+		}
+		else
+		{
+			AudioManager.Instance.PlaySound("collide_2");
+		}
 	}
 
 	Vector2 NextMovement(Direction direction) {

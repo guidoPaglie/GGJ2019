@@ -29,7 +29,7 @@ namespace Levels
                 
                 ItemsLevelsSR[inventoryCount].enabled = true;
                 inventoryCount++;
-                AudioManager.Instance.PlaySound("Get_special_item");
+                AudioManager.Instance.PlaySound("get_special_item");
                 
                 if (inventoryCount >= ItemsLevelsSR.Count)
                     enabled = false;
