@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PickableItemView : MonoBehaviour
 {
-    private const string COOKIES_ID = "cookies";
+    private const string COOKIES_ID = "cookies_left";
     private const string KEY_RIGHT_ID = "key_right";
     private const string KEY_LEFT_ID = "key_left";
 
