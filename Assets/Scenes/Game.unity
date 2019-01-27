@@ -744,18 +744,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e510ed53199e64d68831219af8ed0daf, type: 3}
---- !u!114 &1015245603 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1015245603, guid: e510ed53199e64d68831219af8ed0daf,
-    type: 3}
-  m_PrefabInstance: {fileID: 1015245602}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb08630968b048ad8fe31515c775ae2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1060567556
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1409,7 @@ MonoBehaviour:
   dialogBoxRight: {fileID: 1881837029}
   level1: {fileID: 4131112080533753201}
   level2: {fileID: 3976011398835744528}
-  level3: {fileID: 1015245603}
+  level3: {fileID: 6170064031692701325}
   PickablesLeft: {fileID: 162067549}
   PickablesRight: {fileID: 1650043517}
 --- !u!114 &1482430471533249317 stripped
@@ -1679,5 +1667,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5fdd24a9c9694e1d8b29bde28da1970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6170064031692701325 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6170064031692701325, guid: e510ed53199e64d68831219af8ed0daf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1015245602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8609f8828a5f4499a795e5c87b966765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

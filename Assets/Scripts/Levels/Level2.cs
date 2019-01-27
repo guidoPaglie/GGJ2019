@@ -66,13 +66,11 @@
 								{
 									_gameManager.AnimateItemTo(rat, Direction.Right, 4, () =>
 									{
-										GridManager.RemoveItemIn(rat.itemPosition.x, rat.itemPosition.y, rat);
+										GridManager.RemoveItemIn(rat.itemPosition.x, rat.itemPosition.y);
 										GridManager.RemoveItemIn(cupboard_right_1.itemPosition.x,
-											cupboard_right_1.itemPosition.y,
-											cupboard_right_1);
+											cupboard_right_1.itemPosition.y);
 										GridManager.RemoveItemIn(cupboard_right_2.itemPosition.x,
-											cupboard_right_2.itemPosition.y,
-											cupboard_right_2);
+											cupboard_right_2.itemPosition.y);
 										rat.DestroyItem();
 										cupboard_right_1.DestroyItem();
 										cupboard_right_2.DestroyItem();

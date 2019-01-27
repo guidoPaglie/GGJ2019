@@ -58,13 +58,13 @@ public class Level1 : LevelController {
 				break;
 			case "ball_left":
 				_gameManager.AnimateItemTo(ballLeft, Direction.Up, 3, () => {
-					GridManager.RemoveItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y, potLeft);
+					GridManager.RemoveItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y);
 					potLeft.DestroyItem();
 					brokenPotLeft.gameObject.SetActive(true);
 					potRight.gameObject.SetActive(false);
 					doorRight.isDoor = true;
-					GridManager.RemoveItemIn(potRight.itemPosition.x, potRight.itemPosition.y, potRight);
-					GridManager.RemoveItemIn(potRightCollider.itemPosition.x, potRightCollider.itemPosition.y, potRightCollider);
+					GridManager.RemoveItemIn(potRight.itemPosition.x, potRight.itemPosition.y);
+					GridManager.RemoveItemIn(potRightCollider.itemPosition.x, potRightCollider.itemPosition.y);
 					GridManager.InsertItemIn(brokenPotLeft.itemPosition.x, brokenPotLeft.itemPosition.y, brokenPotLeft);
 					ballLeft.message = "";
 					ballLeft.id = "";

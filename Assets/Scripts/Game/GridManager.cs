@@ -57,7 +57,7 @@ public class GridManager : MonoBehaviour {
 		}
 	}
 
-	public static void RemoveItemIn(int itemPositionX, int itemPositionY, Item potLeft) {
+	public static void RemoveItemIn(int itemPositionX, int itemPositionY) {
 		var cell = GetCell(new Vector2(itemPositionX, itemPositionY));
 		cell.SetItem(null);
 	}
