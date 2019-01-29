@@ -135,10 +135,6 @@ public class GameManager : MonoBehaviour {
 		StartCoroutine(AnimateItem(item, direction, tilesQty, onEnd));
 	}
 
-	public bool IsCharacterHoldingXYB() {
-		return characterLeft.IsHoldingXYB() || characterRight.IsHoldingXYB();
-	}
-
 	public void HighlightItem(string itemResourcesName) {
 		ItemHighlight.HighlightItem(itemResourcesName);
 	}

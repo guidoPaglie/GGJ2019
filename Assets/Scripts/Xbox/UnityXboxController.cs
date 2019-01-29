@@ -8,10 +8,18 @@ public class UnityXboxController : MonoBehaviour {
 	private float _timer;
 
 	void FixedUpdate() {
+		if (InteractButtonHold()) {
+			OnAHold();
+		}
+		
 		if (InteractButtonPressed()) {
 			OnAPressed();
 		}
-
+				
+		if (InteractButtonUp()) {
+			OnAUp();
+		}
+		
 		if (!_directionInputBlocked) {
 			if (LeftButtonPressed()) {
 				OnLeftStickLeft();
@@ -29,6 +37,7 @@ public class UnityXboxController : MonoBehaviour {
 				OnLeftStickDown();
 				_directionInputBlocked = true;
 			}
+			
 		}
 		else {
 			if (_timer <= directionInputDelay) {
@@ -41,10 +50,22 @@ public class UnityXboxController : MonoBehaviour {
 		}
 	}
 
-	public bool IsHoldingXYB() {
-		return Input.GetKey(KeyCode.X) && Input.GetKey(KeyCode.B) && Input.GetKey(KeyCode.Y) ||
-		       XCI.GetButton(XboxButton.X, controller) && XCI.GetButton(XboxButton.B, controller) &&
-		       XCI.GetButton(XboxButton.Y, controller);
+	protected virtual void OnAUp() {
+		
+	}
+
+	private bool InteractButtonUp() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.E : KeyCode.M;
+		return Input.GetKeyUp(keyboardKey) || XCI.GetButtonUp(XboxButton.A, controller);
+	}
+
+	protected virtual void OnAHold() {
+		
+	}
+
+	private bool InteractButtonHold() {
+		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.E : KeyCode.M;
+		return Input.GetKey(keyboardKey) || XCI.GetButton(XboxButton.A, controller);
 	}
 
 	private bool InteractButtonPressed() {
@@ -54,22 +75,22 @@ public class UnityXboxController : MonoBehaviour {
 
 	protected virtual bool LeftButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.A : KeyCode.LeftArrow;
-		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) <= -1 || XCI.GetButton(XboxButton.DPadLeft, controller);
 	}
 
 	protected virtual bool RightButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.D : KeyCode.RightArrow;
-		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickX, controller) >= 1 || XCI.GetButton(XboxButton.DPadRight, controller);
 	}
 
 	protected virtual bool UpButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.W : KeyCode.UpArrow;
-		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) >= 1 || XCI.GetButton(XboxButton.DPadUp, controller);
 	}
 
 	protected virtual bool DownButtonPressed() {
 		KeyCode keyboardKey = controller == XboxController.First ? KeyCode.S : KeyCode.DownArrow;
-		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1;
+		return Input.GetKey(keyboardKey) || XCI.GetAxis(XboxAxis.LeftStickY, controller) <= -1 || XCI.GetButton(XboxButton.DPadDown, controller);
 	}
 
 	protected virtual void OnLeftStickDown() {

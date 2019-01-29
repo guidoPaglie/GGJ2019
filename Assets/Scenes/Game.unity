@@ -191,45 +191,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: 91702aef08aff4cdeb6d078981f9f4e2,
-        type: 2}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: 21134198299845868, guid: 91702aef08aff4cdeb6d078981f9f4e2,
-        type: 2}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_fontColor32.rgba
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213740623, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_firstOverflowCharacterIndex
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1213740626, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 21134198299845868, guid: 91702aef08aff4cdeb6d078981f9f4e2,
-        type: 2}
-    - target: {fileID: 1213740625, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 058d8eb0cdab540dd8430422a0fc684e, type: 3}
 --- !u!114 &162067549 stripped
@@ -564,11 +525,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level3
       objectReference: {fileID: 0}
-    - target: {fileID: 6170064031692701324, guid: e510ed53199e64d68831219af8ed0daf,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 90509153680119492, guid: e510ed53199e64d68831219af8ed0daf,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -809,6 +765,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3976011398835744527, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3915165096242628931, guid: bfaee1ac6f50b4201865f1f4cfb7b1ba,
         type: 3}
@@ -1322,6 +1283,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 6296989054934855725, guid: 3b3450a9771b9462c9b2f739e4d235ce,
+        type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 108432773}
+    - target: {fileID: 6296989054693684912, guid: 3b3450a9771b9462c9b2f739e4d235ce,
+        type: 3}
+      propertyPath: PlayerControllerRight
+      value: 
+      objectReference: {fileID: 1482430471533249317}
+    - target: {fileID: 6296989055340736013, guid: 3b3450a9771b9462c9b2f739e4d235ce,
+        type: 3}
+      propertyPath: Character
+      value: 
+      objectReference: {fileID: 1482430471533249317}
     - target: {fileID: 6296989054693684913, guid: 3b3450a9771b9462c9b2f739e4d235ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1377,11 +1353,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6296989054693684912, guid: 3b3450a9771b9462c9b2f739e4d235ce,
-        type: 3}
-      propertyPath: PlayerControllerRight
-      value: 
-      objectReference: {fileID: 1482430471533249317}
     - target: {fileID: 6296989054997264526, guid: 3b3450a9771b9462c9b2f739e4d235ce,
         type: 3}
       propertyPath: m_Mesh
@@ -1427,15 +1398,5 @@ PrefabInstance:
       propertyPath: m_isInputParsingRequired
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6296989054934855725, guid: 3b3450a9771b9462c9b2f739e4d235ce,
-        type: 3}
-      propertyPath: Character
-      value: 
-      objectReference: {fileID: 108432773}
-    - target: {fileID: 6296989055340736013, guid: 3b3450a9771b9462c9b2f739e4d235ce,
-        type: 3}
-      propertyPath: Character
-      value: 
-      objectReference: {fileID: 1482430471533249317}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b3450a9771b9462c9b2f739e4d235ce, type: 3}

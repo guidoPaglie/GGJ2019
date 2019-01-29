@@ -9,11 +9,12 @@ public class CharacterController : UnityXboxController {
 	public Sprite CharacterLeftSprite;
 	public Sprite CharacterRightSprite;
 	private Direction _currentDirection = Direction.Up;
-
-	private GameManager _gameManager;
-
+	public Vector2 currentPosition;
+	private GameManager _gameManager;	
 	public string pickedItemId;
-
+	private Action _onHold;
+	private Action _onUp;
+	
 	void Awake() {
 		UpdateSprite(_currentDirection);
 	}
@@ -27,8 +28,20 @@ public class CharacterController : UnityXboxController {
 		Debug.Log("A Pressed");
 		_gameManager.PerformAction(this);
 	}
+
 	
-	
+	public void SetOnHoldCall(Action onHold, Action onUp) {
+		_onHold = onHold;
+		_onUp = onUp;
+	}
+	protected override void OnAHold() {
+		_onHold?.Invoke();
+	}
+
+	protected override void OnAUp() {
+		_onUp?.Invoke();
+	} 
+
 	
 	protected override void OnLeftStickLeft() {
 		Debug.Log("Left Pressed");

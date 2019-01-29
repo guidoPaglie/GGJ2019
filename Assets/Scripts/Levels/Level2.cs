@@ -1,4 +1,7 @@
-﻿public class Level2 : LevelController {
+﻿using System.Runtime.InteropServices;
+using UnityEngine;
+
+public class Level2 : LevelController {
 	public LevelIntro LevelIntro;
 	public Item rat;
 	public Item phonebook;
@@ -132,18 +135,39 @@
 				phone_left.message = "phone_ring_right";
 
 				door_right.message = null;
+				door_right.id = "door_right";
 				
 				phone_left.StopAnimation();
 				break;
+			case "door_right_blocked":
+				AudioManager.Instance.PlaySound("door_jammed");
+				break;
 			case "door_right":
-
-				if (_gameManager.IsCharacterHoldingXYB()) 
-					_gameManager.LoadLevel3();
-				else
-					AudioManager.Instance.PlaySound("door_jammed");
+				_doorRightPressed = true;
+				var holdingTimer = 0.0f;
+				_gameManager.characterRight.SetOnHoldCall(() => {
+					if (holdingTimer< 5) {
+						holdingTimer += Time.deltaTime;
+					}
+					else {
+						_gameManager.LoadLevel3();
+						holdingTimer = 0;
+						_gameManager.characterRight.SetOnHoldCall(null, null);
+					}
+				}, () => holdingTimer = 0);				
 				break;
 		}
 	}
+
+	private bool _doorRightPressed;
+//	void Update() {
+//		
+//		if(!_doorRightPressed) return;
+//		if (!_gameManager.IsCharacterHoldingFor5Seconds()) return;
+//		
+//		_gameManager.LoadLevel3();
+//		_doorRightPressed = false;
+//	}
 
 	private void RatAudio()
 	{

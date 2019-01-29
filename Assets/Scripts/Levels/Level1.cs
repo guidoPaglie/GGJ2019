@@ -6,6 +6,11 @@ public class Level1 : LevelController {
 	public Item cartridgeTrigger1;
 	public Item cartridgeTrigger2;
 	public Item cartridgeTrigger3;
+	public Item cartridgeTrigger4;
+	public Item cartridgeTrigger5;
+	public Item cartridgeTrigger6;
+	public Item cartridgeTrigger7;
+	public Item cartridgeTrigger8;
 	public Item cartridgeLeft;
 	public Item cartridgeRight;
 	public Item doorLeft;
@@ -33,6 +38,11 @@ public class Level1 : LevelController {
 		GridManager.InsertItemIn(cartridgeTrigger1.itemPosition.x, cartridgeTrigger1.itemPosition.y, cartridgeTrigger1);
 		GridManager.InsertItemIn(cartridgeTrigger2.itemPosition.x, cartridgeTrigger2.itemPosition.y, cartridgeTrigger2);
 		GridManager.InsertItemIn(cartridgeTrigger3.itemPosition.x, cartridgeTrigger3.itemPosition.y, cartridgeTrigger3);
+		GridManager.InsertItemIn(cartridgeTrigger4);
+		GridManager.InsertItemIn(cartridgeTrigger5);
+		GridManager.InsertItemIn(cartridgeTrigger6);
+		GridManager.InsertItemIn(cartridgeTrigger7);
+		GridManager.InsertItemIn(cartridgeTrigger8);
 		GridManager.InsertItemIn(doorLeft.itemPosition.x, doorLeft.itemPosition.y, doorLeft);
 		GridManager.InsertItemIn(doorRight.itemPosition.x, doorRight.itemPosition.y, doorRight);
 		GridManager.InsertItemIn(potLeft.itemPosition.x, potLeft.itemPosition.y, potLeft);		
@@ -56,13 +66,19 @@ public class Level1 : LevelController {
 				memoryTrigger04.DestroyItem();
 				break;
 			case "cartridge_trigger":
-				GridManager.InsertItemIn(cartridgeLeft.itemPosition.x, cartridgeLeft.itemPosition.y, cartridgeLeft);
-				GridManager.InsertItemIn(cartridgeRight.itemPosition.x, cartridgeRight.itemPosition.y, cartridgeRight);
+				AudioManager.Instance.PlaySound("drop_item_3");
+				GridManager.InsertItemIn((int)_gameManager.characterLeft.transform.position.x, (int)_gameManager.characterLeft.transform.position.y - 1, cartridgeLeft);
+				GridManager.InsertItemIn((int)_gameManager.characterLeft.transform.position.x + 14, (int)_gameManager.characterLeft.transform.position.y - 1, cartridgeRight);
 				cartridgeLeft.gameObject.SetActive(true);
 				cartridgeRight.gameObject.SetActive(true);
 				cartridgeTrigger1.DestroyItem();
 				cartridgeTrigger2.DestroyItem();
 				cartridgeTrigger3.DestroyItem();
+				cartridgeTrigger4.DestroyItem();
+				cartridgeTrigger5.DestroyItem();
+				cartridgeTrigger6.DestroyItem();
+				cartridgeTrigger7.DestroyItem();
+				cartridgeTrigger8.DestroyItem();
 				break;
 			case "cartridge_right":
 				ballRight.id = "ball_right";
@@ -71,6 +87,7 @@ public class Level1 : LevelController {
 				break;
 			case "ball_right":
 				ballLeft.gameObject.SetActive(true);
+				AudioManager.Instance.PlaySound("key_drop");
 				GridManager.InsertItemIn(ballLeft.itemPosition.x, ballLeft.itemPosition.y, ballLeft);
 				break;
 			case "ball_left":

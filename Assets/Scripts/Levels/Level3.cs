@@ -24,6 +24,7 @@ namespace Levels
         public Item library_right;
         public Item tv_right;
         public Item key_right;
+        public Item characterPlayingBlock;
 
         public Item console_right;
 
@@ -84,10 +85,12 @@ namespace Levels
         {
             switch (item)
             {
-                case "car1_right":
+                case "car2_right":
+                    if (_car1Activated) return;
                     AudioManager.Instance.PlaySound("toy_car");
                     _car1Activated = true;
-                    _gameManager.AnimateItemTo(car1_left, Direction.Up, 4, () =>
+                    
+                    _gameManager.AnimateItemTo(car2_left, Direction.Right, 2, () =>
                     {
                         if (_car2Activated)
                         {
@@ -95,13 +98,14 @@ namespace Levels
                         }
 
                         _car1Activated = false;
-                        _gameManager.AnimateItemTo(car1_left, Direction.Down, 4, () => { });
+                        _gameManager.AnimateItemTo(car2_left, Direction.Left, 2, () => { });
                     });                    
                     break;
-                case "car2_left":
+                case "car1_left":
+                    if (_car2Activated) return;
                     AudioManager.Instance.PlaySound("toy_car");
                     _car2Activated = true;
-                    _gameManager.AnimateItemTo(car2_left, Direction.Right, 2, () =>
+                    _gameManager.AnimateItemTo(car1_left, Direction.Up, 4, () =>
                     {
                         if (_car1Activated)
                         {
@@ -109,7 +113,7 @@ namespace Levels
                         }
 
                         _car2Activated = false;
-                        _gameManager.AnimateItemTo(car2_left, Direction.Left, 2, () => { });
+                        _gameManager.AnimateItemTo(car1_left, Direction.Down, 4, () => { });
                     });
                     break;
                 case "key_left":
@@ -170,6 +174,8 @@ namespace Levels
                     tvSoccer.SetActive(true);
                     AudioManager.Instance.PlaySound("tv_soccer_intro");
 
+                    characterPlayingBlock.SetPosition(_gameManager.characterRight.transform.position);
+                    GridManager.InsertItemIn(characterPlayingBlock);
                     StartCoroutine(addBridgeBlocks());
                     break;
 
@@ -178,6 +184,7 @@ namespace Levels
                     TvBlockRight.id = "";
                     _gameManager.characterLeft.enabled = false;
                     Debug.Log("Ending");
+                    AudioManager.Instance.PlaySound("pickup_item_2");
                     Invoke("startEndingAnimation", 2);
                     break;
             }
@@ -190,7 +197,7 @@ namespace Levels
                 Item block = floors[i];
                 block.GetComponent<SpriteRenderer>().enabled = true;
                 block.isWalkable = true;
-
+                AudioManager.Instance.PlaySound("fall_hard");
                 yield return new WaitForSeconds(0.5f);
             }
         }
